@@ -1523,3 +1523,73 @@ blockquote {
   background: rgba(102, 192, 244, 0.08) !important;
   border-left-color: var(--tertiary) !important;
 }
+
+
+/* 聊天编辑器区域 - Steam 风格 */
+.chat-composer,
+.chat-composer__wrapper {
+  background: var(--secondary) !important;
+  border-top: 1px solid var(--primary-low) !important;
+}
+
+.chat-composer__outer-container {
+  background: transparent !important;
+}
+
+.chat-composer__inner-container {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  
+  &:focus-within {
+    border-color: var(--tertiary) !important;
+    box-shadow: 0 0 6px rgba(102, 192, 244, 0.2) !important;
+  }
+}
+
+.chat-composer__input,
+.chat-composer textarea {
+  background: transparent !important;
+  color: var(--primary-high) !important;
+  
+  &::placeholder {
+    color: var(--primary-medium) !important;
+  }
+}
+
+// 聊天输入提示文字
+.chat-composer-placeholder,
+.chat-composer__placeholder {
+  color: var(--primary-medium) !important;
+}
+
+// 聊天发送按钮
+.chat-composer__send-btn {
+  background: transparent !important;
+  
+  .d-icon {
+    color: var(--primary-medium) !important;
+  }
+  
+  &:hover .d-icon {
+    color: var(--tertiary) !important;
+  }
+}
+
+.chat-composer.is-send-enabled .chat-composer__send-btn .d-icon {
+  color: var(--tertiary) !important;
+}
+
+// 聊天附加按钮
+.chat-composer-dropdown__trigger-btn {
+  background: transparent !important;
+  border: none !important;
+  
+  .d-icon {
+    color: var(--primary-medium) !important;
+  }
+  
+  &:hover .d-icon {
+    color: var(--tertiary) !important;
+  }
+}

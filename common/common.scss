@@ -1,54 +1,94 @@
-// button
+// Steam Community Style Theme for Discourse
+// 保持原有布局，复刻 Steam 游戏社区视觉风格
 
+// Steam 配色变量
 :root {
-  --d-button-border: 1px solid transparent;
-  --d-button-default-bg-color: var(--secondary);
-  --d-button-default-bg-color--hover: var(--secondary);
-  --d-button-default-text-color--hover: var(--tertiary-800);
-  --d-button-default-icon-color--hover: var(--tertiary-800);
-  --d-button-transition: all 0.3s;
-  --d-button-border-radius: 6px;
-  --btn-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
-  --d-input-border-radius: 6px;
-  --ant-radius: 6px;
+  // Steam 核心颜色
+  --steam-dark-bg: #1b2838;
+  --steam-darker-bg: #171a21;
+  --steam-card-bg: #16202d;
+  --steam-hover-bg: #2a475e;
+  --steam-border: #2a475e;
+  --steam-border-light: #3d6a8c;
+  --steam-blue: #66c0f4;
+  --steam-blue-hover: #8ed1fc;
+  --steam-blue-dark: #1a9fff;
+  --steam-green: #5c7e10;
+  --steam-green-hover: #8bc53f;
+  --steam-text: #c7d5e0;
+  --steam-text-dim: #8f98a0;
+  --steam-text-bright: #ffffff;
+  --steam-gradient-start: #2a475e;
+  --steam-gradient-end: #1b2838;
+  
+  // 按钮样式
+  --d-button-border: 1px solid var(--steam-border);
+  --d-button-default-bg-color: var(--steam-card-bg);
+  --d-button-default-bg-color--hover: var(--steam-hover-bg);
+  --d-button-default-text-color--hover: var(--steam-blue);
+  --d-button-default-icon-color--hover: var(--steam-blue);
+  --d-button-transition: all 0.2s ease-in-out;
+  --d-button-border-radius: 3px;
+  --btn-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --d-input-border-radius: 3px;
+  --ant-radius: 3px;
   --d-border-radius: var(--ant-radius);
-  --menu-box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%),
-    0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
-  --small-shadow: 0 3px 8px 0 rgb(0, 0, 0, 0.08);
-  --float-btn-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  
+  // Steam 风格阴影
+  --menu-box-shadow: 0 0 12px rgba(0, 0, 0, 0.6), 
+    0 0 3px rgba(102, 192, 244, 0.1);
+  --small-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --float-btn-shadow: 0 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 4px rgba(102, 192, 244, 0.2);
+  --steam-glow: 0 0 10px rgba(102, 192, 244, 0.3);
 }
 
+// Steam 按钮样式
 .discourse-no-touch .btn {
   &.btn-default {
-    --d-button-border: 1px solid var(--primary-300);
+    --d-button-border: 1px solid var(--steam-border);
+    background: linear-gradient(to bottom, rgba(47, 137, 188, 0.2), rgba(23, 26, 33, 0.4));
+    
     &:hover {
-      --d-button-border: 1px solid var(--tertiary-700);
+      --d-button-border: 1px solid var(--steam-blue);
+      background: linear-gradient(to bottom, rgba(102, 192, 244, 0.3), rgba(47, 137, 188, 0.2));
+      box-shadow: var(--steam-glow);
     }
   }
+  
   &.btn-primary {
-    // --d-button-border: 1px solid var(--tertiary);
+    background: linear-gradient(to bottom, #5c7e10, #4a6b0d);
+    border: 1px solid #8bc53f;
+    
     &:hover {
-      --d-button-border: 1px solid var(--tertiary-hover);
+      background: linear-gradient(to bottom, #8bc53f, #5c7e10);
+      border: 1px solid #a4d007;
+      box-shadow: 0 0 8px rgba(140, 197, 63, 0.4);
     }
   }
+  
   &.btn-danger {
-    // --d-button-border: 1px solid var(--danger);
+    background: linear-gradient(to bottom, #8b0000, #5c0000);
+    border: 1px solid #ff4444;
+    
     &:hover {
-      --d-button-border: 1px solid var(--danger-hover);
+      background: linear-gradient(to bottom, #aa0000, #8b0000);
+      border: 1px solid #ff6666;
     }
   }
 }
 
-@mixin transition-300 {
-  transition: all 0.3s;
+@mixin transition-steam {
+  transition: all 0.2s ease-in-out;
 }
 
+// 下拉选择框 Steam 风格
 .select-kit .select-kit-header:not(.btn),
 .list-controls .combo-box .combo-box-header {
-  border: 1px solid var(--primary-300);
-  border-radius: 6px;
-  transition: all 0.3s;
+  border: 1px solid var(--steam-border);
+  border-radius: 3px;
+  background: linear-gradient(to bottom, rgba(42, 71, 94, 0.6), rgba(27, 40, 56, 0.8));
+  @include transition-steam;
 }
 
 @media (min-width: 1000px) {
@@ -68,13 +108,14 @@
 
 .select-kit .d-icon,
 .select-kit .select-kit-header .caret-icon {
-  color: var(--primary-low-mid);
+  color: var(--steam-text-dim);
 }
 
 .select-kit .select-kit-header:not(.btn):hover,
 .list-controls .combo-box .combo-box-header:hover {
-  border: 1px solid var(--tertiary-800);
-  color: var(--tertiary);
+  border: 1px solid var(--steam-blue);
+  color: var(--steam-blue);
+  box-shadow: var(--steam-glow);
 }
 
 .select-kit.multi-select.is-expanded .multi-select-header,
@@ -82,43 +123,48 @@
 .select-kit.single-select.is-expanded .select-kit-header:not(.btn),
 .select-kit.single-select .select-kit-header:not(.btn):focus,
 .select-kit.single-select .select-kit-header:not(.btn):active {
-  border: 1px solid var(--tertiary-800);
+  border: 1px solid var(--steam-blue);
   outline: none;
+  box-shadow: var(--steam-glow);
 }
 
 .select-kit.multi-select.is-expanded .multi-select-header,
 .select-kit.single-select.is-expanded .select-kit-header:not(.btn) {
-  color: var(--primary-low-mid);
+  color: var(--steam-text);
 }
 
 .select-kit.single-select .select-kit-header .badge-wrapper {
-  transition: all 0.3s;
+  @include transition-steam;
 }
+
 .select-kit.single-select.is-expanded .select-kit-header .badge-wrapper {
-  opacity: 0.5;
+  opacity: 0.7;
 }
-@keyframes selectkit-drop-down {
+
+@keyframes steam-slide-down {
   0% {
-    margin-top: -50px;
+    margin-top: -20px;
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
 }
+
 .select-kit.is-expanded .select-kit-body {
   border-radius: var(--ant-radius);
   box-shadow: var(--menu-box-shadow);
-  animation: 0.3s selectkit-drop-down;
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
+  animation: 0.2s steam-slide-down;
 }
-.select-kit.single-select.dropdown-select-box.is-expanded
-  .select-kit-collection,
+
+.select-kit.single-select.dropdown-select-box.is-expanded .select-kit-collection,
 .select-kit.single-select.dropdown-select-box.is-expanded .select-kit-body {
-  animation: 0.3s selectkit-drop-down;
+  animation: 0.2s steam-slide-down;
 }
 
-/* Text input */
-
+/* Steam 风格输入框 */
 textarea:focus,
 .search-menu .search-input:focus-within,
 input[type="text"]:focus,
@@ -136,7 +182,10 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus {
   outline: none;
+  border-color: var(--steam-blue) !important;
+  box-shadow: var(--steam-glow);
 }
+
 textarea,
 .search-menu .search-input,
 input[type="text"],
@@ -153,16 +202,19 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  border: 1px solid var(--primary-300);
-  transition: all 0.3s;
+  border: 1px solid var(--steam-border);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--steam-text);
+  @include transition-steam;
   border-radius: var(--d-input-border-radius);
 }
+
 .discourse-no-touch textarea:hover,
 .search-menu .search-input:hover,
 input:hover,
 .discourse-no-touch .d-editor-textarea-wrapper:hover {
-  border: 1px solid var(--tertiary-800);
-  transition: all 0.3s;
+  border: 1px solid var(--steam-blue);
+  @include transition-steam;
 }
 
 .discourse-no-touch .d-editor-textarea-wrapper textarea:hover {
@@ -170,73 +222,87 @@ input:hover,
 }
 
 .search-menu .search-input {
-  border: 1px solid var(--primary-300);
+  border: 1px solid var(--steam-border);
   border-radius: var(--d-input-border-radius);
+  background: rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation */
 
-html.mobile-view #navigation-bar.nav-pills>li button{
+/* Steam 风格导航栏 */
+html.mobile-view #navigation-bar.nav-pills > li button {
   border: none;
   box-shadow: none;
   border-radius: none;
 }
 
 .nav-pills {
-  box-shadow: 0 3px 0 var(--primary-50);
+  box-shadow: 0 2px 0 var(--steam-border);
+  
   li {
     margin-bottom: 0;
+    
     a,
     button {
-      transition: all 0.3s;
+      @include transition-steam;
       border-radius: 0;
+      color: var(--steam-text-dim);
+      
       &::after {
         display: none;
       }
+      
       &.active {
-        background-color: transparent;
-        box-shadow: 0 3px 0 var(--d-nav-color--active);
+        background: linear-gradient(to bottom, var(--steam-hover-bg), transparent);
+        box-shadow: 0 2px 0 var(--steam-blue);
+        color: var(--steam-blue);
       }
+      
       &:not(.active):hover {
-        color: var(--primary);
-        background-color: transparent;
-        box-shadow: 0 3px 0 var(--d-nav-color--active);
+        color: var(--steam-text-bright);
+        background: linear-gradient(to bottom, rgba(102, 192, 244, 0.1), transparent);
+        box-shadow: 0 2px 0 var(--steam-blue);
       }
     }
   }
 }
+
 .admin-controls,
 .admin-controls nav {
   background-color: transparent;
 }
+
 .admin-controls nav:before,
 .admin-controls nav:after {
   display: none;
 }
 
 .admin-controls .nav-pills > li a.active {
-  background: transparent;
+  background: linear-gradient(to bottom, var(--steam-hover-bg), transparent);
 }
+
 .admin-controls .nav-pills > li > a:not(.active):hover,
 .admin-controls .nav-pills > li button:not(.active):hover {
-  color: var(--quaternary);
+  color: var(--steam-blue);
   background-color: transparent;
   box-shadow: none;
 }
 
 .new-user-wrapper .user-navigation .nav-pills li a {
-  transition: all 0.3s;
+  @include transition-steam;
 }
 
 .nav-pills > li button {
-  border: 1px solid var(--btn-default-border);
+  border: 1px solid var(--steam-border);
   box-shadow: var(--btn-box-shadow);
   border-radius: var(--d-button-border-radius);
   margin-left: 10px;
+  background: linear-gradient(to bottom, rgba(47, 137, 188, 0.2), rgba(23, 26, 33, 0.4));
 }
+
 .admin-controls .nav-pills > li button:not(.active):hover,
 .nav-pills > li button:hover {
-  color: var(--tertiary-800);
+  color: var(--steam-blue);
+  border-color: var(--steam-blue);
 }
 
 .admin-controls .admin-actions {
@@ -259,60 +325,68 @@ html.mobile-view #navigation-bar.nav-pills>li button{
   }
 }
 
-/* content */
+/* Steam 风格内容区域 */
 .boxed.admin-content {
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
   padding: 10px;
   border-radius: var(--ant-radius);
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
 }
+
 .new-user-wrapper {
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
   padding: 10px;
   border-radius: var(--ant-radius);
   margin-top: 15px;
   width: calc(100% - 21px);
-  background: var(--secondary);
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
 }
 
 .user-main .about.has-background,
 .user-main .about.no-background {
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
   border-radius: var(--ant-radius);
   margin-top: 15px;
   overflow: hidden;
   width: calc(100% - 2px);
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
 }
+
 .user-main .about.no-background .details,
 .user-main .about.has-background .details {
   padding: 10px 10px;
   border: none;
 }
 
-/* Alert */
+/* Steam 风格提示框 */
 .alert.alert-info {
   border-radius: var(--ant-radius);
-  border: 1px solid var(--tertiary-800);
-  background-color: var(--tertiary-50);
+  border: 1px solid var(--steam-blue);
+  background: linear-gradient(135deg, rgba(102, 192, 244, 0.15), rgba(42, 71, 94, 0.3));
+  color: var(--steam-text);
 }
 
 .alert.alert-info .btn-flat.close .d-icon {
-  color: var(--primary-low-mid);
+  color: var(--steam-text-dim);
   transform: scale(0.7);
 }
+
 .discourse-no-touch .alert.alert-info .btn-flat.close:hover .d-icon,
 .discourse-no-touch .alert.alert-info .btn-flat.close.btn-hover .d-icon {
-  color: var(--primary-high);
+  color: var(--steam-text-bright);
 }
 
 .modal .modal-body .warning {
-  border: 1px solid var(--danger);
+  border: 1px solid #ff4444;
   padding: 5px 10px;
   border-radius: var(--ant-radius);
-  background: var(--danger-low);
+  background: rgba(139, 0, 0, 0.3);
 }
+
 .alert.alert-warning {
-  border: 1px solid var(--highlight-high);
+  border: 1px solid #ffc107;
   border-radius: var(--ant-radius);
+  background: rgba(255, 193, 7, 0.15);
 }
 
 body.has-full-page-chat .alert-error,
@@ -322,96 +396,130 @@ body.has-full-page-chat .alert-warning {
   margin: 10px 0 1px 0;
   border-bottom: unset;
 }
+
 body.has-full-page-chat .alert-info {
-  border: 1px solid var(--tertiary-800);
+  border: 1px solid var(--steam-blue);
 }
 
-/* chat */
+/* Steam 风格聊天 */
 .btn.no-text.btn-flat.chat-scroll-to-bottom__button {
-  background: transparent;
+  background: var(--steam-hover-bg);
+  border: 1px solid var(--steam-border);
+  
   .d-icon {
-    color: var(--secondary) !important;
+    color: var(--steam-blue) !important;
   }
 }
 
 .d-header .chat-channel-unread-indicator {
   scale: 0.7;
   transform: translate(-5px, 26px);
+  background: var(--steam-green);
 }
+
 .full-page-chat .chat-full-page-header {
   border-top: none;
   border-radius: var(--ant-radius);
+  background: var(--steam-card-bg);
 }
 
 .chat-composer__inner-container {
   border: none;
+  background: var(--steam-card-bg);
 }
+
 .chat-composer__input-container textarea {
-  border: 1px solid var(--primary-300);
+  border: 1px solid var(--steam-border);
   margin-right: 5px;
   margin-top: 6px;
   min-height: 35px;
   line-height: 1.6em;
+  background: rgba(0, 0, 0, 0.3);
 }
+
 .chat-composer-dropdown__trigger-btn.btn {
   margin: 7px 3px 0 0;
 }
 
-/* popup menu */
-
+/* Steam 风格弹出菜单 */
 .popup-menu {
   border-radius: var(--ant-radius);
   box-shadow: var(--menu-box-shadow);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
 }
 
 .menu-panel,
 .chat-drawer {
   border-radius: var(--ant-radius);
   box-shadow: var(--menu-box-shadow);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
 }
 
-/*   Modal   */
+/* Steam 风格模态框 */
 .modal .modal-inner-container {
   border-radius: var(--ant-radius);
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
+  border: 1px solid var(--steam-border);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), var(--steam-glow);
 }
+
 .modal-footer {
   justify-content: flex-end;
   padding: 14px 1px 10px 15px;
+  border-top: 1px solid var(--steam-border);
 }
+
 .modal-header h3 {
   font-size: var(--font-up-2);
+  color: var(--steam-text-bright);
 }
 
 .discard-draft-modal .btn.save-draft {
   order: -3;
-  border: 1px solid transparent;
-  color: var(--secondary);
-  background: var(--tertiary);
+  border: 1px solid var(--steam-green);
+  color: var(--steam-text-bright);
+  background: linear-gradient(to bottom, #5c7e10, #4a6b0d);
   box-shadow: var(--btn-box-shadow);
 }
+
 .discard-draft-modal .btn.save-draft:hover {
-  background: var(--tertiary-hover);
+  background: linear-gradient(to bottom, #8bc53f, #5c7e10);
 }
+
 .discard-draft-modal .btn.keep-editing {
   order: -2;
-  border: 1px solid;
+  border: 1px solid var(--steam-border);
   box-shadow: var(--btn-box-shadow);
 }
+
 .discard-draft-modal .btn.discard-draft {
   order: -1;
 }
 
+
+/* Steam 风格帖子控制 */
 nav.post-controls .actions button {
   border-radius: var(--ant-radius);
+  background: transparent;
+  border: 1px solid transparent;
+  
+  &:hover {
+    background: var(--steam-hover-bg);
+    border-color: var(--steam-border);
+  }
 }
 
 nav.post-controls .actions .double-button button {
   border-radius: 0;
 }
+
 nav.post-controls .actions .double-button button:first-child {
   border-top-left-radius: var(--ant-radius);
   border-bottom-left-radius: var(--ant-radius);
 }
+
 nav.post-controls .actions .double-button button:last-child {
   border-top-right-radius: var(--ant-radius);
   border-bottom-right-radius: var(--ant-radius);
@@ -419,30 +527,35 @@ nav.post-controls .actions .double-button button:last-child {
 
 nav.post-controls .actions > button.edit:last-child,
 nav.post-controls .actions > button.reply:last-child {
-  border: 1px solid var(--tertiary-800);
-  background: var(--seecondary);
+  border: 1px solid var(--steam-blue);
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.2), rgba(42, 71, 94, 0.3));
   box-shadow: var(--btn-box-shadow);
   opacity: 1;
-  transition: all 0.3s;
+  @include transition-steam;
 }
+
 nav.post-controls .actions > button.edit:last-child:hover,
 nav.post-controls .actions > button.reply:last-child:hover {
-  background: var(--tertiary-hover);
-  border: 1px solid var(--tertiary);
+  background: linear-gradient(to bottom, var(--steam-blue), rgba(102, 192, 244, 0.6));
+  border: 1px solid var(--steam-blue-hover);
+  box-shadow: var(--steam-glow);
 }
+
 nav.post-controls .actions > button.edit:last-child:active,
 nav.post-controls .actions > button.reply:last-child:active {
   scale: 0.95;
 }
+
 nav.post-controls .actions > button.edit:last-child *,
 nav.post-controls .actions > button.reply:last-child * {
-  color: var(--tertiary-800);
+  color: var(--steam-blue);
   font-size: 90%;
-  transition: all 0.3s;
+  @include transition-steam;
 }
+
 nav.post-controls .actions > button.edit:last-child:hover *,
 nav.post-controls .actions > button.reply:last-child:hover * {
-  color: var(--secondary);
+  color: var(--steam-text-bright);
 }
 
 .discourse-no-touch
@@ -453,32 +566,37 @@ nav.post-controls .actions > button.reply:last-child:hover * {
   .discourse-reactions-reaction-button:hover
   .reaction-button {
   border-radius: var(--ant-radius);
+  background: var(--steam-hover-bg);
 }
 
-/* header */
+/* Steam 风格头部 */
 .drop-down-mode .d-header-icons .active .icon {
-  border: 1px solid transparent;
-  border-radius: 100%;
-  background: rgba(var(--tertiary-rgb), 0.2);
+  border: 1px solid var(--steam-blue);
+  border-radius: 3px;
+  background: rgba(102, 192, 244, 0.2);
 }
+
 .drop-down-mode .d-header-icons .active .icon > .d-icon {
-  color: var(--header_primary);
+  color: var(--steam-blue);
 }
+
 .drop-down-mode .d-header-icons .active .icon:after {
   display: none;
 }
+
 .discourse-no-touch .drop-down-mode .d-header-icons .active .icon:hover {
-  background: rgba(var(--tertiary-rgb), 0.2);
-}
-.discourse-no-touch .d-header-icons .icon:hover,
-.discourse-no-touch .d-header-icons .icon:focus {
-  border-radius: 100%;
-  background: transparent;
+  background: rgba(102, 192, 244, 0.3);
 }
 
-@keyframes panel-drop-down {
+.discourse-no-touch .d-header-icons .icon:hover,
+.discourse-no-touch .d-header-icons .icon:focus {
+  border-radius: 3px;
+  background: var(--steam-hover-bg);
+}
+
+@keyframes steam-panel-down {
   0% {
-    transform: translateY(-50px);
+    transform: translateY(-20px);
     opacity: 0;
   }
   100% {
@@ -486,9 +604,10 @@ nav.post-controls .actions > button.reply:last-child:hover * {
     transform: translateY(0px);
   }
 }
-@keyframes panel-drop-up {
+
+@keyframes steam-panel-up {
   0% {
-    transform: translateY(50px);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {
@@ -496,64 +615,79 @@ nav.post-controls .actions > button.reply:last-child:hover * {
     opacity: 1;
   }
 }
+
 .menu-panel.drop-down {
   margin-top: 3px;
-  animation: 0.3s panel-drop-down;
+  animation: 0.2s steam-panel-down;
 }
+
 .chat-drawer.is-expanded {
-  animation: 0.3s panel-drop-up;
+  animation: 0.2s steam-panel-up;
 }
+
 .chat-drawer:not(.is-expanded) {
-  animation: 0.3s panel-drop-down;
+  animation: 0.2s steam-panel-down;
 }
 
 .d-header-icons .icon > .d-icon,
 .d-header-icons .icon > .d-icon {
-  color: var(--header_primary-very-high);
-  scale: 0.7;
+  color: var(--steam-text-dim);
+  scale: 0.8;
 }
+
 .discourse-no-touch .d-header-icons .icon:hover > .d-icon,
 .discourse-no-touch .d-header-icons .icon:focus > .d-icon {
-  color: var(--header_primary);
+  color: var(--steam-blue);
 }
 
 .user-menu.revamped .tabs-list .btn {
   border-radius: 0;
+  background: transparent;
+  border-bottom: 2px solid transparent;
 }
+
 .user-menu.revamped .tabs-list .btn.active {
-  background: var(--tertiary-300);
+  background: linear-gradient(to bottom, var(--steam-hover-bg), transparent);
+  border-bottom: 2px solid var(--steam-blue);
 }
+
 .user-menu.revamped .tabs-list .btn:active {
   scale: 1;
   border: none;
 }
+
 .btn.btn-sidebar-toggle:active {
   border: none;
 }
 
-/*   Sidebar   */
-
+/* Steam 风格侧边栏 */
 :root {
   --d-sidebar-header-font-weight: bold;
-  --d-sidebar-header-color: var(--primary-very-high);
-  --d-sidebar-active-color: var(--tertiary);
+  --d-sidebar-header-color: var(--steam-text-bright);
+  --d-sidebar-active-color: var(--steam-blue);
   --d-sidebar-row-height: 2.3em;
 }
 
-/* 细节 */
+/* Steam 风格创建主题按钮 */
 #create-topic.btn-default {
-  background: var(--tertiary);
-  border: 1px solid transparent;
+  background: linear-gradient(to bottom, #5c7e10, #4a6b0d);
+  border: 1px solid #8bc53f;
+  box-shadow: 0 0 8px rgba(140, 197, 63, 0.3);
 }
+
 #create-topic.btn-default * {
-  color: var(--secondary);
+  color: var(--steam-text-bright);
 }
+
 #create-topic.btn-default:hover {
-  background: var(--tertiary-hover);
+  background: linear-gradient(to bottom, #8bc53f, #5c7e10);
+  box-shadow: 0 0 12px rgba(140, 197, 63, 0.5);
 }
+
 .mobile-view .group-details-after-outlet.invite {
   margin-top: 8px;
 }
+
 @media (max-width: 780px) {
   .modal-footer {
     padding: 14px 15px 10px 15px;
@@ -567,15 +701,15 @@ nav.post-controls .actions > button.reply:last-child:hover * {
   .container.group .group-details-button .group-message-button.btn-primary,
   #create-topic.btn-default {
     position: fixed;
-    border-radius: 100%;
-    border: none;
+    border-radius: 3px;
+    border: 1px solid #8bc53f;
     width: 60px;
     height: 60px;
     right: 20px;
     bottom: 30px;
     z-index: 99;
     box-shadow: var(--float-btn-shadow);
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     margin: 0;
   }
   .nav-controls-hidden .user-main .navigation-controls .new-private-message.btn,
@@ -615,18 +749,24 @@ nav.post-controls .actions > button.reply:last-child:hover * {
 .admin-controls .controls {
   background: transparent;
 }
+
 .admin-detail {
   border: none;
 }
 
+
+/* Steam 风格主题地图 */
 .topic-map {
   border-radius: var(--ant-radius);
-  border-top: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
 }
+
 .topic-map section:first-child {
   border-radius: var(--ant-radius);
   border-top: none;
 }
+
 .topic-map .map .btn.btn-icon {
   border: none;
 }
@@ -640,159 +780,223 @@ nav.post-controls .actions > button.reply:last-child:hover * {
 #topic-progress-wrapper .topic-OP-admin-menu-button {
   margin: 0 10px;
 }
+
 .timeline-open-jump-to-post-prompt-btn.btn {
-  border: 1px solid var(--tertiary);
-  background: var(--tertiary);
+  border: 1px solid var(--steam-blue);
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.3), rgba(42, 71, 94, 0.4));
   margin-right: 10px;
 }
+
 .timeline-open-jump-to-post-prompt-btn.btn:hover {
-  background: var(--tertiary-hover);
+  background: linear-gradient(to bottom, var(--steam-blue), rgba(102, 192, 244, 0.6));
+  box-shadow: var(--steam-glow);
 }
+
 .timeline-open-jump-to-post-prompt-btn.btn * {
-  color: var(--secondary);
+  color: var(--steam-blue);
 }
+
+.timeline-open-jump-to-post-prompt-btn.btn:hover * {
+  color: var(--steam-text-bright);
+}
+
 #topic-progress-wrapper .btn.toggle-admin-menu {
   box-shadow: var(--float-btn-shadow);
 }
+
 #topic-progress {
   border-radius: var(--ant-radius);
   overflow: hidden;
   box-shadow: var(--float-btn-shadow);
-  border-color: var(--tertiary-500);
+  border: 1px solid var(--steam-blue);
+  background: var(--steam-card-bg);
 }
 
 #topic-progress-wrapper.docked {
   margin-top: 10px;
 }
+
 #topic-progress-wrapper.docked .btn.toggle-admin-menu,
 #topic-progress-wrapper.docked #topic-progress {
   box-shadow: none;
 }
 
-/* Post stream */
-
+/* Steam 风格嵌入帖子 */
 .embedded-posts {
   border-radius: var(--ant-radius);
+  border: 1px solid var(--steam-border);
+  background: var(--steam-card-bg);
 }
+
 .embedded-posts.bottom {
-  animation: 0.3s panel-drop-down;
+  animation: 0.2s steam-panel-down;
 }
+
 .embedded-posts.top {
-  animation: 0.3s panel-drop-up;
+  animation: 0.2s steam-panel-up;
 }
 
-/*   Users   */
-
-/* Category */
+/* Steam 风格分类 */
 .category-list-item.category {
   border-radius: var(--ant-radius);
-  border-right: 1px solid var(--primary-low) !important;
+  border-right: 1px solid var(--steam-border) !important;
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
 }
+
 .category-boxes .category-box,
 .category-boxes-with-topics .category-box {
   border-radius: var(--ant-radius);
   box-shadow: var(--small-shadow);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
+  
+  &:hover {
+    border-color: var(--steam-blue);
+    box-shadow: var(--steam-glow);
+  }
 }
+
 .category-boxes .category-box-inner,
 .category-boxes-with-topics .category-box-inner {
-  border: 1px solid var(--primary-low);
+  border: none;
   border-radius: 0 var(--ant-radius) var(--ant-radius) 0;
 }
 
 div.edit-category .edit-category-title-bar {
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
   border-radius: var(--ant-radius);
+  background: var(--steam-card-bg);
 }
 
-/* Group */
+/* Steam 风格群组 */
 .groups-boxes .group-box {
   border-radius: var(--ant-radius);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
+  
+  &:hover {
+    border-color: var(--steam-blue);
+    box-shadow: var(--steam-glow);
+  }
 }
+
 .group-details-container {
   border-radius: var(--ant-radius);
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
   box-shadow: var(--small-shadow);
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
 }
+
 .nav-stacked,
 div.edit-category .edit-category-nav .nav-stacked,
 .user-secondary-navigation .nav-stacked {
   border-radius: var(--ant-radius);
-  background: var(--primary-very-low);
+  background: var(--steam-card-bg);
   padding: 10px;
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--steam-border);
 }
+
 .nav-stacked li {
   border: none;
 }
+
 .nav-stacked li a,
 .user-secondary-navigation .nav-stacked li a {
   margin-bottom: 5px;
   border-radius: var(--ant-radius);
-  transition: all 0.3s;
-}
-.nav-stacked li a.active,
-.user-secondary-navigation .nav-stacked li a.active {
-  background: var(--tertiary-100);
-  border-radius: var(--ant-radius);
-  color: var(--tertiary);
-}
-.nav-stacked li a:not(.active):hover,
-.user-secondary-navigation .nav-stacked li a:not(.active):hover {
-  background: var(--primary-low);
-  border-radius: var(--ant-radius);
+  @include transition-steam;
+  color: var(--steam-text-dim);
 }
 
-/* Mobile view */
+.nav-stacked li a.active,
+.user-secondary-navigation .nav-stacked li a.active {
+  background: linear-gradient(to right, rgba(102, 192, 244, 0.2), transparent);
+  border-radius: var(--ant-radius);
+  color: var(--steam-blue);
+  border-left: 3px solid var(--steam-blue);
+}
+
+.nav-stacked li a:not(.active):hover,
+.user-secondary-navigation .nav-stacked li a:not(.active):hover {
+  background: var(--steam-hover-bg);
+  border-radius: var(--ant-radius);
+  color: var(--steam-text-bright);
+}
+
+/* Steam 风格移动端视图 */
 .mobile-view #navigation-bar.nav-pills {
   box-shadow: none;
 }
+
 .mobile-view #navigation-bar.nav-pills li {
   border: none;
 }
+
 .mobile-view #navigation-bar.nav-pills a.toggle-link {
   min-width: 100px;
   border: none;
-  box-shadow: 0 3px 0 var(--quaternary);
+  box-shadow: 0 2px 0 var(--steam-blue);
   justify-content: center;
+  color: var(--steam-blue);
 }
+
 .mobile-view .list-controls .nav-pills .drop {
   margin-top: 10px;
-  border: none;
+  border: 1px solid var(--steam-border);
   box-shadow: var(--menu-box-shadow);
   border-radius: var(--ant-radius);
   justify-content: center;
-  animation: 0.3s panel-drop-down;
+  animation: 0.2s steam-panel-down;
+  background: var(--steam-card-bg);
 }
+
 .list-controls .nav-pills .drop li a {
   padding-left: 10px;
   margin: 10px;
-  color: var(--primary);
+  color: var(--steam-text);
 }
 
-/*   uod   */
+/* Steam 风格提示 */
 .popup-tip.bad {
   border-radius: var(--ant-radius);
-  border: 1px solid var(--tertiary);
+  border: 1px solid var(--steam-blue);
+  background: var(--steam-card-bg);
 }
 
+/* Steam 风格用户卡片 */
 .user-card,
 .group-card,
 .user-card .card-content,
 .group-card .card-content {
   border-radius: var(--ant-radius);
   outline: none;
+  background: linear-gradient(135deg, var(--steam-card-bg), var(--steam-darker-bg));
+  border: 1px solid var(--steam-border);
+  box-shadow: var(--menu-box-shadow);
 }
 
 .top-sub-section li {
   border: none;
 }
 
+/* Steam 风格徽章 */
 .badge-card {
   border-radius: var(--ant-radius);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
+  
+  &:hover {
+    border-color: var(--steam-blue);
+    box-shadow: var(--steam-glow);
+  }
 }
 
 .user-menu.revamped .quick-access-panel li {
-  transition: all 0.3s;
+  @include transition-steam;
+  
+  &:hover {
+    background: var(--steam-hover-bg);
+  }
 }
 
 .user-menu.revamped .quick-access-panel li .btn {
@@ -805,100 +1009,124 @@ div.edit-category .edit-category-nav .nav-stacked,
 }
 
 .header-dropdown-toggle.chat-header-icon .icon.active {
-  border-radius: 100%;
-  background: rgba(var(--tertiary-rgb), 0.2);
-  border: none;
+  border-radius: 3px;
+  background: rgba(102, 192, 244, 0.2);
+  border: 1px solid var(--steam-blue);
 }
 
 .mobile-nav .drop.expanded {
   box-shadow: var(--menu-box-shadow);
   border-radius: var(--ant-radius);
-  animation: 0.3s panel-drop-down;
+  animation: 0.2s steam-panel-down;
+  background: var(--steam-card-bg);
 }
 
 .mobile-nav > li > a.expander {
-  border: 1px solid var(--primary-300);
-  border-radius: 6px;
-  transition: all 0.3s;
+  border: 1px solid var(--steam-border);
+  border-radius: 3px;
+  @include transition-steam;
 }
 
+/* Steam 风格对话框 */
 .dialog-content {
   border-radius: var(--ant-radius);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
 }
+
 .btn-reply-here {
-  border: 1px solid var(--primary-400);
+  border: 1px solid var(--steam-border);
+  background: var(--steam-card-bg);
 }
+
 .btn-reply-here * {
-  transition: all 0.3s;
+  @include transition-steam;
 }
-.btn-reply-here:hover * {
-  color: var(--tertiary-800) !important;
+
+.btn-reply-here:hover {
+  border-color: var(--steam-blue);
+  
+  * {
+    color: var(--steam-blue) !important;
+  }
 }
+
 .reply-where-modal .btn.btn-reply-where__cancel:hover {
   background: transparent;
 }
 
+
+/* Steam 风格侧边栏底部 */
 .sidebar-footer-wrapper .sidebar-footer-container {
-  background: var(--secondary);
+  background: var(--steam-darker-bg);
   border: none;
+  border-top: 1px solid var(--steam-border);
 }
+
 .sidebar-wrapper .sidebar-sections {
-  --scrollbarThumbBg: var(--tertiary-200);
+  --scrollbarThumbBg: var(--steam-hover-bg);
 }
 
 .sidebar-footer-wrapper .sidebar-footer-container:before {
   background: linear-gradient(
     to bottom,
-    rgba(var(--secondary-rgb), 0),
-    rgba(var(--secondary-rgb), 1)
+    rgba(23, 26, 33, 0),
+    rgba(23, 26, 33, 1)
   );
 }
 
+/* Steam 风格危险按钮 */
 .btn.btn-danger.btn-icon:not(:hover) {
-  background: var(--secondary);
-  border: 1px solid var(--danger);
-}
-.btn.btn-danger.btn-icon:not(:hover) * {
-  color: var(--danger);
+  background: transparent;
+  border: 1px solid #ff4444;
 }
 
+.btn.btn-danger.btn-icon:not(:hover) * {
+  color: #ff4444;
+}
+
+/* Steam 风格表情选择器 */
 .emoji-picker {
   border-radius: var(--ant-radius);
   box-shadow: var(--menu-box-shadow);
+  background: var(--steam-card-bg);
+  border: 1px solid var(--steam-border);
 }
 
 .discourse-no-touch .btn-flat:hover .badge-notification .d-icon,
 .discourse-no-touch .btn-flat.btn-hover .badge-notification .d-icon {
-  color: var(--secondary);
+  color: var(--steam-text-bright);
 }
 
 .chat-emoji-picker__filter.dc-filter-input-container {
   border-radius: var(--ant-radius);
-  background: var(--secondary);
-  border: 1px solid var(--primary-300);
-  transition: all 0.3s;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--steam-border);
+  @include transition-steam;
 }
+
 .chat-emoji-picker__filter.dc-filter-input-container:hover,
 .chat-emoji-picker__filter.dc-filter-input-container:focus {
-  border: 1px solid var(--tertiary-800);
+  border: 1px solid var(--steam-blue);
+  box-shadow: var(--steam-glow);
 }
 
-/*  Upd at 2023/4/30 */
-
+/* 移动端主题列表 */
 .mobile-view .full-width #list-area .topic-list .topic-list-body {
   border-top: none;
 }
 
 .mobile-view .list-controls .nav-pills > li a:not(.active) {
-  box-shadow: 0 3px 0 var(--primary-low);
+  box-shadow: 0 2px 0 var(--steam-border);
 }
+
 .mobile-view .list-controls #navigation-bar.nav-pills {
   flex-wrap: nowrap;
+  
   > li,
   > li a {
     justify-content: center;
     min-width: max-content;
-    // width: 100%;
     border-radius: 0;
   }
 }
@@ -906,24 +1134,25 @@ div.edit-category .edit-category-nav .nav-stacked,
 @media (max-width: 780px) {
   .mobile-view .list-controls .navigation-controls {
     position: fixed;
-    /*         border: 2px solid; */
     width: 40px;
     right: 27px;
     bottom: 90px;
     z-index: 99;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
+  
   .mobile-view .list-controls .navigation-controls > .btn,
   .mobile-view
     .list-controls
     .navigation-controls
     > .notifications-button.select-kit
     .select-kit-header {
-    border-radius: 100%;
-    border: 1px solid var(--primary-300);
-    color: var(--secondary);
+    border-radius: 3px;
+    border: 1px solid var(--steam-border);
+    background: var(--steam-card-bg);
     box-shadow: var(--float-btn-shadow);
   }
+  
   .mobile-view .list-controls .navigation-controls > .btn .d-icon,
   .mobile-view
     .list-controls
@@ -931,24 +1160,28 @@ div.edit-category .edit-category-nav .nav-stacked,
     > .notifications-button.select-kit
     .select-kit-header
     .d-icon {
-    color: var(--primary-high);
+    color: var(--steam-text);
   }
+  
   .mobile-view
     .list-controls
     .navigation-controls
     > .notifications-button.select-kit
     .select-kit-header
     .d-icon.d-icon-d-watching {
-    color: var(--tertiary);
+    color: var(--steam-blue);
   }
+  
   .mobile-view .list-controls .navigation-controls > .btn:hover,
   .mobile-view
     .list-controls
     .navigation-controls
     > .notifications-button.select-kit
     .select-kit-header:hover {
-    border: 1px solid var(--tertiary-800);
+    border: 1px solid var(--steam-blue);
+    box-shadow: var(--steam-glow);
   }
+  
   .mobile-view .nav-controls-hidden .list-controls .navigation-controls {
     right: -80px;
   }
@@ -959,39 +1192,41 @@ div.edit-category .edit-category-nav .nav-stacked,
   .navigation-controls
   > .categories-admin-dropdown.select-kit
   .select-kit-header {
-  border-radius: 800px;
-  border: 1px solid var(--primary-300);
-  color: var(--secondary);
+  border-radius: 3px;
+  border: 1px solid var(--steam-border);
+  background: var(--steam-card-bg);
   box-shadow: var(--float-btn-shadow);
   margin-left: -10px;
 }
+
 .mobile-view
   .list-controls
   .navigation-controls
   > .categories-admin-dropdown.select-kit.is-expanded
   .select-kit-header {
-  border: 1px solid var(--tertiary-800);
+  border: 1px solid var(--steam-blue);
 }
 
+/* Steam 风格 Onebox */
 aside.onebox {
   border-radius: var(--ant-radius);
-  border: 1px solid var(--primary-low);
-  background: var(--primary-very-low);
+  border: 1px solid var(--steam-border);
+  background: var(--steam-card-bg);
 }
 
-/* new chat composer */
+/* Steam 风格聊天编辑器 */
 .chat-composer__inner-container textarea {
   border: 1px solid transparent !important;
 }
 
 .chat-composer .chat-composer__send-btn .d-icon {
-  transition: all 0.3s;
+  @include transition-steam;
 }
 
 .chat-composer.is-send-enabled .chat-composer__send-btn:focus {
   outline: unset;
-  box-shadow: inset 0 0 3px var(--tertiary);
-  border-radius: 0 10px 10px 0;
+  box-shadow: inset 0 0 3px var(--steam-blue);
+  border-radius: 0 3px 3px 0;
 }
 
 .chat-message
@@ -1002,30 +1237,35 @@ aside.onebox {
 .chat-message .chat-emoji-avatar .chat-emoji-avatar-container {
   width: 32px;
   height: 32px;
+  border-radius: 3px;
 }
 
 .chat-composer.is-focused .chat-composer__inner-container {
-  box-shadow: 0 0 4px 1px var(--tertiary-low);
+  box-shadow: 0 0 4px 1px rgba(102, 192, 244, 0.3);
+  border: 1px solid var(--steam-blue);
 }
 
 .chat-composer-dropdown__action-btn.btn {
   justify-content: start;
 }
 
+/* Steam 风格用户提示 */
 .tippy-box[data-theme="user-tips"] .btn-flat,
 .tippy-box[data-theme="user-tips"] .json-editor-btn-collapse {
   background: transparent !important;
-  color: var(--secondary) !important;
+  color: var(--steam-text-bright) !important;
 }
 
 .tippy-box[data-theme="user-tips"] .btn-primary {
-  background: var(--secondary) !important;
-  color: var(--tertiary) !important;
+  background: linear-gradient(to bottom, #5c7e10, #4a6b0d) !important;
+  color: var(--steam-text-bright) !important;
+  border: 1px solid #8bc53f;
 }
 
 html.mobile-view {
   .user-main .details .controls ul {
     flex-direction: row;
+    
     li {
       margin: 0 5px 0 5px;
     }
@@ -1036,27 +1276,45 @@ html.mobile-view {
   border: 1px solid transparent;
 }
 
-.btn-transparent, .btn-transparent.btn-default, .btn-transparent.btn-text, .btn-transparent.btn-icon, .btn-transparent.no-text, .d-modal.json-schema-editor-modal .je-ready button.btn-transparent, .d-modal.json-schema-editor-modal .je-ready .btn-transparent.json-editor-btn-delete {
+.btn-transparent,
+.btn-transparent.btn-default,
+.btn-transparent.btn-text,
+.btn-transparent.btn-icon,
+.btn-transparent.no-text,
+.d-modal.json-schema-editor-modal .je-ready button.btn-transparent,
+.d-modal.json-schema-editor-modal .je-ready .btn-transparent.json-editor-btn-delete {
   border: 1px solid transparent;
 }
 
-<<<<<<< HEAD
-/** topic-list */
+/* Steam 风格主题列表 */
 :root {
-  --title-color--read: var(--primary-high);
+  --title-color--read: var(--steam-text-dim);
 }
 
 table.topic-list {
   --d-table-border-top-height: 1px;
   
   tbody {
-    border-top: var(--d-table-border-top-height) solid var(--primary-low-mid);
+    border-top: var(--d-table-border-top-height) solid var(--steam-border);
   }
+  
+  tr {
+    border-bottom: 1px solid var(--steam-border);
+    
+    &:hover {
+      background: var(--steam-hover-bg);
+    }
+  }
+}
+
+.topic-list-item {
+  @include transition-steam;
 }
 
 .topic-list-layout-table-ai .topic-list-item .excerpt__contents {
   font-size: var(--font-down-1);
   max-width: unset;
+  color: var(--steam-text-dim);
 }
 
 :root {
@@ -1064,7 +1322,7 @@ table.topic-list {
 }
 
 .discourse-tag.bullet::before {
-  border-radius: 999px;
+  border-radius: 2px;
   width: 10px;
   height: 10px;
 }
@@ -1072,8 +1330,134 @@ table.topic-list {
 .badge-category__wrapper .badge-category {
   align-items: center;
 }
-=======
+
 .select-kit .badge-category__icon .d-icon {
-    color: inherit !important;
+  color: inherit !important;
 }
->>>>>>> c3bc86605ea15266d8aed11239ab6329e37ffd3f
+
+/* Steam 特有的额外样式 */
+
+/* Steam 风格滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--steam-darker-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--steam-hover-bg);
+  border-radius: 2px;
+  
+  &:hover {
+    background: var(--steam-border-light);
+  }
+}
+
+/* Steam 风格链接 */
+a {
+  color: var(--steam-blue);
+  @include transition-steam;
+  
+  &:hover {
+    color: var(--steam-blue-hover);
+    text-decoration: none;
+  }
+}
+
+/* Steam 风格帖子标题 */
+.topic-list .main-link a.title {
+  color: var(--steam-text);
+  
+  &:hover {
+    color: var(--steam-blue);
+  }
+  
+  &:visited {
+    color: var(--steam-text-dim);
+  }
+}
+
+/* Steam 风格帖子内容 */
+.cooked {
+  color: var(--steam-text);
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--steam-text-bright);
+    border-bottom: 1px solid var(--steam-border);
+    padding-bottom: 0.3em;
+  }
+  
+  code {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--steam-border);
+    border-radius: 2px;
+    color: var(--steam-blue);
+  }
+  
+  pre {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--steam-border);
+    border-radius: var(--ant-radius);
+  }
+  
+  blockquote {
+    border-left: 3px solid var(--steam-blue);
+    background: rgba(102, 192, 244, 0.1);
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
+}
+
+/* Steam 风格头像 */
+.avatar {
+  border-radius: 3px;
+  border: 1px solid var(--steam-border);
+}
+
+/* Steam 风格时间戳 */
+.relative-date,
+.post-date {
+  color: var(--steam-text-dim);
+}
+
+/* Steam 风格分隔线 */
+hr {
+  border: none;
+  border-top: 1px solid var(--steam-border);
+}
+
+/* Steam 风格表格 */
+table {
+  border: 1px solid var(--steam-border);
+  
+  th {
+    background: var(--steam-hover-bg);
+    border: 1px solid var(--steam-border);
+    color: var(--steam-text-bright);
+  }
+  
+  td {
+    border: 1px solid var(--steam-border);
+  }
+}
+
+/* Steam 风格加载动画 */
+.spinner {
+  border-color: var(--steam-blue);
+  border-right-color: transparent;
+}
+
+/* Steam 风格选中状态 */
+::selection {
+  background: rgba(102, 192, 244, 0.3);
+  color: var(--steam-text-bright);
+}
+
+/* Steam 风格焦点状态 */
+*:focus-visible {
+  outline: 2px solid var(--steam-blue);
+  outline-offset: 2px;
+}

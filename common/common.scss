@@ -2433,3 +2433,60 @@ tr.topic-list-item-separator {
   border-width: 1px !important;
   border-style: solid !important;
 }
+
+
+/* 移动端下拉框优化 */
+@media (max-width: 768px) {
+  .select-kit .select-kit-header,
+  .select-kit.single-select .select-kit-header,
+  .combo-box .combo-box-header,
+  .list-controls .select-kit-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 12px !important;
+    min-height: 40px !important;
+    
+    .selected-name,
+    .name,
+    span {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+    
+    .caret-icon,
+    .d-icon {
+      display: flex !important;
+      align-items: center !important;
+      margin-left: 8px !important;
+    }
+  }
+  
+  // 移动端导航下拉
+  .mobile-view .select-kit-header,
+  .mobile-view .combo-box-header {
+    justify-content: center !important;
+    
+    .selected-name {
+      flex: 0 0 auto !important;
+    }
+  }
+}
+
+/* 通用下拉框对齐修复 */
+.select-kit .select-kit-header {
+  display: flex;
+  align-items: center;
+  
+  .selected-name {
+    display: flex;
+    align-items: center;
+  }
+  
+  .caret-icon {
+    display: flex;
+    align-items: center;
+  }
+}

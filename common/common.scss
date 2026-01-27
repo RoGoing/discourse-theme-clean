@@ -1367,3 +1367,159 @@ main .btn.btn-text,
   background: var(--secondary) !important;
   border: 1px solid var(--primary-low) !important;
 }
+
+
+/* ========================================
+   全局选中/高亮状态修复 - Steam 深色风格
+   ======================================== */
+
+// 通用选中背景色变量
+:root {
+  --steam-selected-bg: rgba(102, 192, 244, 0.15);
+  --steam-hover-bg: rgba(102, 192, 244, 0.08);
+  --steam-active-bg: rgba(102, 192, 244, 0.2);
+}
+
+// 聊天消息选中
+.chat-message-container.is-highlighted,
+.chat-message-container.is-active,
+.chat-message-container:focus,
+.chat-message.is-highlighted,
+.chat-message.is-active,
+.chat-message-container.highlighted,
+.-highlighted,
+.chat-transcript-messages .chat-message-container.highlighted {
+  background: var(--steam-selected-bg) !important;
+  
+  * {
+    color: var(--primary-high) !important;
+  }
+  
+  .chat-message-info__username,
+  .chat-message-info__date,
+  .chat-message-text {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 所有列表项选中/高亮
+.is-selected,
+.is-highlighted,
+.selected,
+.highlighted,
+[aria-selected="true"],
+.active {
+  background: var(--steam-selected-bg) !important;
+}
+
+// 用户菜单项
+.user-menu .quick-access-panel li.is-highlighted,
+.user-menu .quick-access-panel li:hover,
+.menu-panel li.is-highlighted,
+.menu-panel li:hover {
+  background: var(--steam-hover-bg) !important;
+}
+
+// 搜索结果高亮
+.search-results .fps-result.selected,
+.search-results .search-result-topic.selected,
+.search-menu .results .item.selected,
+.search-menu .results .item:hover {
+  background: var(--steam-selected-bg) !important;
+  
+  * {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 自动完成下拉
+.autocomplete ul li.selected,
+.autocomplete ul li:hover,
+.ac-wrap .item.selected {
+  background: var(--steam-selected-bg) !important;
+  color: var(--primary-high) !important;
+}
+
+// 表格行选中
+tr.selected,
+tr.highlighted,
+.topic-list-item.selected,
+.topic-list-item.highlighted {
+  background: var(--steam-selected-bg) !important;
+}
+
+// 通知项
+.notification.read,
+.notification.unread:hover,
+.quick-access-panel .read:hover {
+  background: var(--steam-hover-bg) !important;
+}
+
+// 确保所有选中状态的文字可见
+.is-selected *,
+.is-highlighted *,
+.selected *,
+.highlighted *,
+[aria-selected="true"] * {
+  color: var(--primary-high) !important;
+}
+
+// 聊天频道列表
+.chat-channel-row.active,
+.chat-channel-row:hover,
+.chat-channel-row.is-active {
+  background: var(--steam-selected-bg) !important;
+  
+  .chat-channel-title,
+  .chat-channel-metadata {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 用户列表选中
+.directory-table tr:hover,
+.admin-users tr:hover,
+.user-stream-item:hover {
+  background: var(--steam-hover-bg) !important;
+}
+
+// 下拉菜单项 - 更强的覆盖
+.select-kit-row,
+.select-kit .select-kit-row {
+  background: transparent !important;
+  color: var(--primary-high) !important;
+  
+  &:hover {
+    background: var(--steam-hover-bg) !important;
+  }
+  
+  &.is-selected,
+  &.is-highlighted,
+  &[aria-selected="true"] {
+    background: var(--steam-selected-bg) !important;
+    color: var(--tertiary) !important;
+    
+    * {
+      color: var(--tertiary) !important;
+    }
+  }
+}
+
+// 弹出菜单项
+.popup-menu .btn:hover,
+.dropdown-menu li:hover,
+.dropdown-menu li.selected {
+  background: var(--steam-hover-bg) !important;
+}
+
+// 时间线选中
+.topic-timeline .timeline-handle {
+  background: var(--tertiary) !important;
+}
+
+// 引用高亮
+.quote .title,
+blockquote {
+  background: rgba(102, 192, 244, 0.08) !important;
+  border-left-color: var(--tertiary) !important;
+}

@@ -1911,3 +1911,293 @@ html .select-kit-row:hover {
   background: rgba(102, 192, 244, 0.15) !important;
   background-color: rgba(102, 192, 244, 0.15) !important;
 }
+
+
+/* ========================================
+   全面修复暗黑模式下的文字和选中状态
+   ======================================== */
+
+/* --- 文字颜色修复 --- */
+
+// 帖子内容
+.cooked,
+.cooked p,
+.cooked li,
+.cooked td,
+.post-body,
+.topic-body,
+.regular {
+  color: var(--primary-high) !important;
+}
+
+// 帖子元信息
+.topic-meta-data,
+.post-info,
+.post-date,
+.relative-date {
+  color: var(--primary-medium) !important;
+}
+
+// 分类描述
+.category-description,
+.category-text-title,
+.category-name {
+  color: var(--primary-high) !important;
+}
+
+// 标签
+.discourse-tag,
+.tag-name {
+  color: var(--primary-high) !important;
+  
+  &:hover {
+    color: var(--tertiary) !important;
+  }
+}
+
+// 面包屑导航
+.breadcrumb-item,
+.category-breadcrumb {
+  color: var(--primary-high) !important;
+}
+
+// 统计数字
+.number,
+.count,
+.topic-list .num,
+.badge-posts,
+.badge-notification {
+  color: var(--primary-high) !important;
+}
+
+// 空状态提示
+.empty-state,
+.no-content,
+.blank-slate {
+  color: var(--primary-medium) !important;
+}
+
+/* --- 选中/高亮状态修复 --- */
+
+// 主题列表行
+.topic-list-item:hover,
+.topic-list-item.selected,
+.topic-list-item.visited:hover,
+tr.topic-list-item:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 用户卡片
+.user-card.show,
+.group-card.show {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+}
+
+// 搜索高亮
+.search-highlight,
+mark,
+.highlighted {
+  background: rgba(102, 192, 244, 0.25) !important;
+  color: var(--primary-very-high) !important;
+}
+
+// 引用
+blockquote,
+.quote,
+aside.quote {
+  background: rgba(102, 192, 244, 0.06) !important;
+  border-left: 3px solid var(--tertiary) !important;
+  
+  .title {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 代码块
+pre,
+code,
+.hljs {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: var(--primary-high) !important;
+}
+
+// 表格
+table th {
+  background: rgba(102, 192, 244, 0.1) !important;
+  color: var(--primary-very-high) !important;
+}
+
+table tr:hover td {
+  background: rgba(102, 192, 244, 0.06) !important;
+}
+
+// 徽章
+.badge-wrapper,
+.badge-category-bg {
+  opacity: 0.9;
+}
+
+// 用户菜单
+.user-menu .tabs-list .btn.active,
+.menu-panel .widget-link.active,
+.menu-panel .widget-link:hover {
+  background: rgba(102, 192, 244, 0.12) !important;
+}
+
+// 通知
+.notification:hover,
+.notification.unread {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 私信
+.private-message-glyph {
+  color: var(--tertiary) !important;
+}
+
+// 草稿
+.draft-list .draft:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 书签
+.bookmark-list .bookmark:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 管理面板
+.admin-contents tr:hover,
+.admin-users tr:hover,
+.directory-table tr:hover {
+  background: rgba(102, 192, 244, 0.06) !important;
+}
+
+// 设置页面
+.setting-label,
+.setting-description {
+  color: var(--primary-high) !important;
+}
+
+.setting-description {
+  color: var(--primary-medium) !important;
+}
+
+// 表单标签
+label,
+.control-label {
+  color: var(--primary-high) !important;
+}
+
+// 帮助文字
+.help,
+.hint,
+.description,
+.instructions {
+  color: var(--primary-medium) !important;
+}
+
+// 时间线
+.topic-timeline .timeline-scrollarea {
+  border-color: var(--primary-low) !important;
+}
+
+// 进度条
+.topic-progress .nums,
+.topic-progress .bg {
+  background: var(--secondary) !important;
+}
+
+// 编辑器
+.d-editor-preview,
+.d-editor-textarea-wrapper {
+  background: var(--secondary) !important;
+  border-color: var(--primary-low) !important;
+}
+
+// 工具栏
+.d-editor-button-bar .btn:hover {
+  background: rgba(102, 192, 244, 0.12) !important;
+}
+
+// 自动完成
+.autocomplete,
+.ac-wrap {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+  
+  li:hover,
+  li.selected {
+    background: rgba(102, 192, 244, 0.12) !important;
+  }
+}
+
+// 提及
+.mention,
+a.mention {
+  background: rgba(102, 192, 244, 0.15) !important;
+  color: var(--tertiary) !important;
+}
+
+// 日期选择器
+.pika-single,
+.date-picker {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+  
+  .pika-button:hover,
+  .is-selected .pika-button {
+    background: rgba(102, 192, 244, 0.15) !important;
+  }
+}
+
+// 颜色选择器
+.colors-container .color-picker {
+  border-color: var(--primary-low) !important;
+}
+
+// 标签选择器
+.tag-chooser .selected-tag,
+.mini-tag-chooser .selected-tag {
+  background: rgba(102, 192, 244, 0.15) !important;
+  color: var(--primary-high) !important;
+}
+
+// 分页
+.pagination .page-item.active .page-link {
+  background: rgba(102, 192, 244, 0.2) !important;
+  color: var(--tertiary) !important;
+}
+
+// 加载更多
+.load-more,
+.show-more {
+  color: var(--tertiary) !important;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.1) !important;
+  }
+}
+
+// 折叠面板
+details summary:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 工具提示
+.tippy-box,
+.tooltip {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+  color: var(--primary-high) !important;
+}
+
+// 确认对话框
+.dialog-body,
+.bootbox.modal {
+  background: var(--secondary) !important;
+  
+  .btn:hover {
+    background: rgba(102, 192, 244, 0.12) !important;
+  }
+}

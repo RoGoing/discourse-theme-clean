@@ -1174,3 +1174,32 @@ span.username a,
     }
   }
 }
+
+
+/* 分类卡片编辑按钮 */
+.category-boxes .category-box .box-contents .edit-category,
+.category-boxes-with-topics .category-box .box-contents .edit-category,
+.category-list .category .edit-category,
+.btn.edit-category,
+a.edit-category {
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.15), rgba(42, 71, 94, 0.2)) !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  padding: 4px 10px !important;
+  color: var(--primary-high) !important;
+  transition: all 0.15s ease-in-out;
+  
+  &:hover {
+    background: linear-gradient(to bottom, rgba(102, 192, 244, 0.25), rgba(42, 71, 94, 0.3)) !important;
+    border-color: var(--tertiary) !important;
+    color: var(--tertiary) !important;
+  }
+}
+
+// 分类卡片底部操作区
+.category-boxes .category-box-inner footer,
+.category-boxes-with-topics .category-box-inner footer {
+  border-top: 1px solid var(--primary-low);
+  padding-top: 8px;
+  margin-top: 8px;
+}

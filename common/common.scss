@@ -2490,3 +2490,48 @@ tr.topic-list-item-separator {
     align-items: center;
   }
 }
+
+
+/* 移动端/窄屏导航栏按钮 - 无边框 */
+@media (max-width: 768px) {
+  .nav-pills li a,
+  .nav-pills li button,
+  #navigation-bar.nav-pills li a,
+  #navigation-bar.nav-pills li button,
+  .list-controls .nav-pills li a,
+  .list-controls .nav-pills li button {
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    
+    &.active {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: 0 2px 0 var(--tertiary) !important;
+    }
+    
+    &:hover:not(.active) {
+      background: rgba(102, 192, 244, 0.08) !important;
+      border: none !important;
+    }
+  }
+  
+  // 移动端导航容器
+  .nav-pills {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+// 更窄屏幕
+@media (max-width: 500px) {
+  .nav-pills li a,
+  .nav-pills li button {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 8px 12px !important;
+  }
+}

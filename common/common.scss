@@ -1697,3 +1697,58 @@ blockquote {
     color: var(--tertiary) !important;
   }
 }
+
+
+/* 侧边栏分类/区块头部选中状态修复 */
+.sidebar-section-header-wrapper:hover,
+.sidebar-section-header-wrapper.active,
+.sidebar-section-header-wrapper:focus,
+.sidebar-section-header:hover,
+.sidebar-section-header.active,
+.sidebar-section-header:focus,
+.sidebar-section-header-caret:hover,
+.sidebar-section-header-caret:focus,
+.btn.sidebar-section-header-button:hover,
+.btn.sidebar-section-header-button:focus,
+.btn.sidebar-section-header-button.active {
+  background: rgba(102, 192, 244, 0.12) !important;
+  
+  .sidebar-section-header-text,
+  .d-icon {
+    color: var(--tertiary) !important;
+  }
+}
+
+// 侧边栏区块头部默认状态
+.sidebar-section-header,
+.sidebar-section-header-wrapper,
+.btn.sidebar-section-header-button {
+  background: transparent !important;
+  border: none !important;
+  transition: all 0.15s ease-in-out;
+  
+  &:active {
+    background: rgba(102, 192, 244, 0.15) !important;
+  }
+}
+
+// 侧边栏更多按钮
+.sidebar-more-section-links-details summary,
+.sidebar-more-section-links-details[open] summary {
+  background: transparent !important;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.1) !important;
+  }
+}
+
+// 侧边栏编辑按钮
+.sidebar-section-header-button.btn-flat,
+.sidebar-section .btn-flat {
+  background: transparent !important;
+  border: none !important;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.12) !important;
+  }
+}

@@ -2350,10 +2350,9 @@ textarea:focus,
 .topic-list-item-separator,
 .topic-list .topic-list-item-separator,
 tr.topic-list-item-separator {
-  border-top-color: var(--tertiary) !important;
-  
   td {
-    border: none !important;
+    border-top: 1px solid var(--tertiary) !important;
+    position: relative;
   }
 }
 
@@ -2361,11 +2360,5 @@ tr.topic-list-item-separator {
 .topic-list-item-separator td span {
   color: var(--tertiary) !important;
   background: var(--secondary) !important;
-}
-
-// 分隔线本身
-.topic-list-item-separator::before,
-.topic-list-item-separator td::before {
-  background: var(--tertiary) !important;
-  border-color: var(--tertiary) !important;
+  padding: 0 8px;
 }

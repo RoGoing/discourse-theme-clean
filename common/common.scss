@@ -1804,3 +1804,45 @@ blockquote {
 .select-kit-row .description {
   color: var(--primary-medium) !important;
 }
+
+
+/* 强制覆盖所有下拉框选中状态 */
+.select-kit-collection .select-kit-row.is-selected,
+.select-kit-collection .select-kit-row.is-highlighted,
+.select-kit-collection .select-kit-row[aria-current="true"],
+.select-kit .select-kit-collection li.is-selected,
+.select-kit .select-kit-collection li.is-highlighted,
+li.select-kit-row.is-selected,
+li.select-kit-row.is-highlighted,
+.select-kit-row.is-selected,
+.select-kit-row.is-highlighted {
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  background: rgba(102, 192, 244, 0.15) !important;
+}
+
+// 更强的选择器
+body .select-kit .select-kit-body .select-kit-collection .select-kit-row.is-selected,
+body .select-kit .select-kit-body .select-kit-collection .select-kit-row.is-highlighted,
+body .select-kit-row.is-selected,
+body .select-kit-row.is-highlighted,
+html .select-kit-row.is-selected,
+html .select-kit-row.is-highlighted {
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  background: rgba(102, 192, 244, 0.15) !important;
+  
+  &,
+  & *,
+  .name,
+  .desc,
+  .description,
+  span {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 悬停状态
+body .select-kit-row:hover,
+html .select-kit-row:hover {
+  background-color: rgba(102, 192, 244, 0.08) !important;
+  background: rgba(102, 192, 244, 0.08) !important;
+}

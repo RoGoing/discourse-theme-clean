@@ -1593,3 +1593,57 @@ blockquote {
     color: var(--tertiary) !important;
   }
 }
+
+
+/* 聊天消息文字颜色修复 */
+.chat-message-info__username,
+.chat-message-info__username a,
+.chat-message-info .username,
+.chat-message .username,
+.chat-message-info__username__name {
+  color: var(--primary-very-high) !important;
+  
+  &:hover {
+    color: var(--tertiary) !important;
+  }
+}
+
+.chat-message-info__date,
+.chat-message .chat-time,
+.chat-message-info .time,
+.chat-message-info__date a {
+  color: var(--primary-medium) !important;
+}
+
+.chat-message-text,
+.chat-message-text p,
+.chat-message .message,
+.chat-message-content {
+  color: var(--primary-high) !important;
+}
+
+// 聊天日期分隔线
+.chat-message-separator__text,
+.chat-message-separator,
+.chat-time-separator {
+  color: var(--primary-medium) !important;
+  
+  &::before,
+  &::after {
+    background: var(--primary-low) !important;
+  }
+}
+
+// 聊天抽屉头部
+.chat-drawer-header,
+.chat-drawer-header__title,
+.chat-channel-title,
+.chat-channel-name {
+  color: var(--primary-high) !important;
+}
+
+// 聊天频道描述
+.chat-channel-preview-card__description,
+.chat-channel-metadata {
+  color: var(--primary-medium) !important;
+}

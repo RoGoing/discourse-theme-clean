@@ -2362,3 +2362,40 @@ tr.topic-list-item-separator {
   background: var(--secondary) !important;
   padding: 0 8px;
 }
+
+
+/* 侧边栏底部按钮悬停修复 */
+.sidebar-footer-wrapper .btn,
+.sidebar-footer-actions .btn,
+.sidebar-footer-container .btn,
+.sidebar-footer-wrapper .sidebar-footer-actions-button,
+.btn.sidebar-footer-actions-button,
+.sidebar-footer-actions-button {
+  background: transparent !important;
+  border: none !important;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    background: rgba(102, 192, 244, 0.12) !important;
+    
+    .d-icon {
+      color: var(--tertiary) !important;
+    }
+  }
+  
+  .d-icon {
+    color: var(--primary-medium) !important;
+  }
+}
+
+// 键盘快捷键按钮
+.keyboard-shortcuts-toggle,
+.btn.keyboard-shortcuts-toggle {
+  background: transparent !important;
+  
+  &:hover,
+  &:focus {
+    background: rgba(102, 192, 244, 0.12) !important;
+  }
+}

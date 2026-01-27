@@ -1130,3 +1130,47 @@ table.topic-list {
 .select-kit .badge-category__icon .d-icon {
     color: inherit !important;
 }
+
+
+/* 用户名颜色修复 */
+.topic-list .posters a.latest:not(.single) .avatar,
+.names .username a,
+.names .first a,
+.topic-meta-data .names span a,
+.topic-post .names .username a,
+.topic-post .names .first a,
+a.username,
+span.username a,
+.username-wrapper a,
+.poster-name a.trigger-user-card {
+  color: var(--primary-high) !important;
+  
+  &:hover {
+    color: var(--tertiary) !important;
+  }
+}
+
+// 帖子作者名称
+.topic-meta-data .names {
+  span, a {
+    color: var(--primary-high);
+  }
+  
+  .first a,
+  .username a {
+    color: var(--primary-very-high) !important;
+    
+    &:hover {
+      color: var(--tertiary) !important;
+    }
+  }
+}
+
+// 主题列表中的用户名
+.topic-list-item .posters {
+  a {
+    .avatar {
+      opacity: 0.9;
+    }
+  }
+}

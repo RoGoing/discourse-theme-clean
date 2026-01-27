@@ -2539,21 +2539,21 @@ tr.topic-list-item-separator {
 
 /* 移动端右下角浮动按钮修复 */
 @media (max-width: 780px) {
-  // 浮动按钮容器
+  // 浮动按钮容器 - 按钮在上，发帖按钮在下
   .mobile-view .list-controls .navigation-controls {
     position: fixed !important;
     right: 15px !important;
-    bottom: 80px !important;
+    bottom: 90px !important;
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
     align-items: center !important;
     gap: 10px !important;
     z-index: 99 !important;
     width: auto !important;
   }
   
-  // 浮动按钮样式
-  .mobile-view .list-controls .navigation-controls > .btn,
+  // 浮动按钮样式（不包括发帖按钮）
+  .mobile-view .list-controls .navigation-controls > .btn:not(#create-topic),
   .mobile-view .list-controls .navigation-controls > .select-kit .select-kit-header {
     width: 44px !important;
     height: 44px !important;
@@ -2575,15 +2575,5 @@ tr.topic-list-item-separator {
     .d-button-label {
       display: none !important;
     }
-  }
-  
-  // 创建主题按钮
-  #create-topic.btn-default {
-    width: 54px !important;
-    height: 54px !important;
-    min-width: 54px !important;
-    min-height: 54px !important;
-    right: 15px !important;
-    bottom: 20px !important;
   }
 }

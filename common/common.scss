@@ -2226,3 +2226,60 @@ details summary:hover {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+
+/* 用户菜单选中状态修复 */
+.user-menu .menu-links-row .btn.active,
+.user-menu .menu-links-row .btn:hover,
+.user-menu .quick-access-panel li.is-active,
+.user-menu .quick-access-panel li:hover,
+.user-menu .menu-link.active,
+.user-menu .menu-link:hover,
+.menu-panel .menu-link.active,
+.menu-panel .menu-link:hover,
+.user-menu.revamped .menu-links-row .btn.active,
+.user-menu.revamped .menu-links-row .btn:hover,
+.user-menu.revamped li.active,
+.user-menu.revamped li:hover,
+.menu-links-row .btn.active,
+.menu-links-row .btn:hover {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  
+  span,
+  .d-icon,
+  .item-label {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 用户菜单面板背景
+.user-menu,
+.user-menu.revamped,
+.menu-panel.user-menu {
+  background: var(--secondary) !important;
+  
+  .menu-links-row {
+    background: transparent !important;
+    border-color: var(--primary-low) !important;
+  }
+}
+
+// 用户菜单标签栏
+.user-menu.revamped .tabs-list {
+  background: transparent !important;
+  border-color: var(--primary-low) !important;
+  
+  .btn {
+    background: transparent !important;
+    
+    &.active {
+      background: rgba(102, 192, 244, 0.12) !important;
+      border-bottom-color: var(--tertiary) !important;
+    }
+    
+    &:hover:not(.active) {
+      background: rgba(102, 192, 244, 0.08) !important;
+    }
+  }
+}

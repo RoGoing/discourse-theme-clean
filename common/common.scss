@@ -2344,3 +2344,28 @@ textarea:focus,
 .d-editor *:focus {
   background-color: inherit !important;
 }
+
+
+/* 上次访问分隔线 - Steam 蓝色风格 */
+.topic-list-item-separator,
+.topic-list .topic-list-item-separator,
+tr.topic-list-item-separator {
+  border-top-color: var(--tertiary) !important;
+  
+  td {
+    border: none !important;
+  }
+}
+
+.topic-list-item-separator span,
+.topic-list-item-separator td span {
+  color: var(--tertiary) !important;
+  background: var(--secondary) !important;
+}
+
+// 分隔线本身
+.topic-list-item-separator::before,
+.topic-list-item-separator td::before {
+  background: var(--tertiary) !important;
+  border-color: var(--tertiary) !important;
+}

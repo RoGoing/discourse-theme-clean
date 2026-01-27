@@ -1647,3 +1647,53 @@ blockquote {
 .chat-channel-metadata {
   color: var(--primary-medium) !important;
 }
+
+
+/* 聊天消息选中/悬停状态修复 */
+.chat-message-container:hover,
+.chat-message-container.is-hovered,
+.chat-message-container.is-active,
+.chat-message-container.is-highlighted,
+.chat-message-container.-highlighted,
+.chat-message-container.highlighted,
+.chat-message:hover,
+.chat-message.is-hovered,
+.chat-message.is-active,
+.chat-message.is-highlighted,
+.-hovered,
+.-active {
+  background: rgba(102, 192, 244, 0.12) !important;
+  
+  .chat-message-info__username,
+  .chat-message-info__username a {
+    color: var(--primary-very-high) !important;
+  }
+  
+  .chat-message-info__date {
+    color: var(--primary-medium) !important;
+  }
+  
+  .chat-message-text,
+  .chat-message-text p {
+    color: var(--primary-high) !important;
+  }
+}
+
+// 聊天消息操作栏
+.chat-message-actions-container,
+.chat-message-actions {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chat-message-actions .chat-message-action,
+.chat-message-actions button {
+  color: var(--primary-high) !important;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.15) !important;
+    color: var(--tertiary) !important;
+  }
+}

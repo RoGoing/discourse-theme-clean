@@ -1318,3 +1318,52 @@ main .btn.btn-text,
     color: #fff !important;
   }
 }
+
+
+/* 下拉框选项 - Steam 风格 */
+.select-kit .select-kit-collection .select-kit-row,
+.select-kit-row {
+  color: var(--primary-high);
+  transition: all 0.15s ease-in-out;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.1) !important;
+    color: var(--tertiary);
+  }
+  
+  &.is-selected,
+  &.is-highlighted,
+  &[aria-selected="true"] {
+    background: rgba(102, 192, 244, 0.15) !important;
+    color: var(--tertiary) !important;
+  }
+}
+
+// 下拉框选中状态
+.select-kit .select-kit-row.is-selected,
+.select-kit .select-kit-row.is-highlighted,
+.select-kit .select-kit-collection li.is-selected,
+.select-kit .select-kit-collection li.is-highlighted,
+.select-kit .select-kit-collection .select-kit-row[aria-selected="true"] {
+  background: rgba(102, 192, 244, 0.15) !important;
+  color: var(--tertiary) !important;
+  
+  .name,
+  .desc,
+  span {
+    color: var(--tertiary) !important;
+  }
+}
+
+// 下拉框悬停
+.select-kit .select-kit-row:hover,
+.select-kit .select-kit-collection li:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 下拉框面板背景
+.select-kit .select-kit-body,
+.select-kit-body {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+}

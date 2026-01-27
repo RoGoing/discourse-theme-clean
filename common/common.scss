@@ -1846,3 +1846,68 @@ html .select-kit-row:hover {
   background-color: rgba(102, 192, 244, 0.08) !important;
   background: rgba(102, 192, 244, 0.08) !important;
 }
+
+
+/* 下拉框当前选中项 - 最高优先级覆盖 */
+.select-kit-row.is-selected,
+.select-kit-row.is-selected.is-highlighted,
+.select-kit-row[aria-current="true"],
+.select-kit-row.selected,
+.select-kit .is-selected,
+.select-kit .selected,
+.select-kit-collection .is-selected,
+.select-kit-body .is-selected,
+.dropdown-select-box .is-selected,
+.single-select .is-selected,
+.multi-select .is-selected {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  color: var(--primary-high) !important;
+  
+  &::before,
+  &::after {
+    background: transparent !important;
+  }
+}
+
+/* 使用 :where 降低原有样式优先级后覆盖 */
+.select-kit-row {
+  &.is-selected,
+  &.is-highlighted,
+  &.selected {
+    --select-kit-selected-bg: rgba(102, 192, 244, 0.15);
+    background: var(--select-kit-selected-bg) !important;
+    background-color: var(--select-kit-selected-bg) !important;
+  }
+}
+
+/* 覆盖 Discourse 默认的选中样式变量 */
+:root {
+  --d-selected-bg: rgba(102, 192, 244, 0.15);
+  --d-hover-bg: rgba(102, 192, 244, 0.08);
+}
+
+.select-kit {
+  --select-kit-selected-bg: rgba(102, 192, 244, 0.15) !important;
+  --select-kit-hover-bg: rgba(102, 192, 244, 0.08) !important;
+}
+
+
+/* 最终覆盖 - 针对所有可能的选中状态 */
+[class*="select-kit"] [class*="is-selected"],
+[class*="select-kit"] [class*="selected"],
+[class*="dropdown"] [class*="is-selected"],
+[class*="dropdown"] [class*="selected"],
+.select-kit-row[class*="selected"],
+.select-kit-row[class*="is-selected"] {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}
+
+/* 如果有内联 style 属性，用这个覆盖 */
+.select-kit-row[style],
+.select-kit-row.is-selected[style],
+.is-selected[style] {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}

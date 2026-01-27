@@ -537,13 +537,50 @@ nav.post-controls .actions > button.reply:last-child:hover * {
   border: none;
 }
 
-/*   Sidebar   */
+/*   Sidebar - Steam Style  */
 
 :root {
   --d-sidebar-header-font-weight: bold;
-  --d-sidebar-header-color: var(--primary-very-high);
+  --d-sidebar-header-color: var(--primary-high);
   --d-sidebar-active-color: var(--tertiary);
   --d-sidebar-row-height: 2.3em;
+  --d-sidebar-highlight-color: rgba(102, 192, 244, 0.15);
+  --d-sidebar-hover-color: rgba(102, 192, 244, 0.08);
+}
+
+// 侧边栏选中状态 - 降低亮度
+.sidebar-section-link-wrapper .sidebar-section-link.active,
+.sidebar-section-link-wrapper .sidebar-section-link--active {
+  background: rgba(102, 192, 244, 0.12) !important;
+  border-radius: 3px;
+  
+  .sidebar-section-link-prefix,
+  .sidebar-section-link-content-text,
+  .d-icon {
+    color: var(--tertiary) !important;
+  }
+}
+
+// 侧边栏悬停状态
+.sidebar-section-link-wrapper .sidebar-section-link:hover:not(.active) {
+  background: rgba(102, 192, 244, 0.06) !important;
+  
+  .sidebar-section-link-prefix,
+  .sidebar-section-link-content-text,
+  .d-icon {
+    color: var(--primary-very-high) !important;
+  }
+}
+
+// 侧边栏默认状态
+.sidebar-section-link-wrapper .sidebar-section-link {
+  transition: all 0.15s ease-in-out;
+  border-radius: 3px;
+  
+  .sidebar-section-link-prefix,
+  .d-icon {
+    color: var(--primary-medium);
+  }
 }
 
 /* 细节 */

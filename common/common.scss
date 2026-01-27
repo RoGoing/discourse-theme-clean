@@ -1755,3 +1755,52 @@ blockquote {
     background: rgba(102, 192, 244, 0.12) !important;
   }
 }
+
+
+/* 通知级别下拉框选中状态修复 */
+.notifications-button .select-kit-row.is-selected,
+.notifications-button .select-kit-row.is-highlighted,
+.topic-notifications-button .select-kit-row.is-selected,
+.topic-notifications-button .select-kit-row.is-highlighted,
+.select-kit.notifications-button .select-kit-row.is-selected,
+.select-kit.dropdown-select-box .select-kit-row.is-selected,
+.select-kit.dropdown-select-box .select-kit-row.is-highlighted,
+.dropdown-select-box .select-kit-row.is-selected,
+.dropdown-select-box .select-kit-row.is-highlighted {
+  background: rgba(102, 192, 244, 0.15) !important;
+  
+  .name,
+  .desc,
+  .names,
+  .description,
+  span,
+  .d-icon {
+    color: var(--primary-high) !important;
+  }
+  
+  .name,
+  .names {
+    color: var(--tertiary) !important;
+  }
+}
+
+// 下拉框悬停
+.notifications-button .select-kit-row:hover,
+.topic-notifications-button .select-kit-row:hover,
+.dropdown-select-box .select-kit-row:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}
+
+// 下拉框面板
+.notifications-button .select-kit-body,
+.topic-notifications-button .select-kit-body,
+.dropdown-select-box .select-kit-body {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+}
+
+// 下拉框描述文字
+.select-kit-row .desc,
+.select-kit-row .description {
+  color: var(--primary-medium) !important;
+}

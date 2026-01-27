@@ -1240,3 +1240,81 @@ a.edit-category {
     background: linear-gradient(to bottom, #8bc53f, #5c7e10) !important;
   }
 }
+
+
+/* 全局修复所有文本/扁平按钮 - Steam 风格 */
+.btn-flat,
+.btn.btn-flat,
+.btn.btn-text,
+.btn-text,
+.btn.no-text:not(.btn-primary):not(.btn-danger),
+.btn-default:not(.btn-primary):not(.btn-danger) {
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.08), rgba(42, 71, 94, 0.1)) !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  color: var(--primary-high) !important;
+  transition: all 0.15s ease-in-out !important;
+  
+  &:hover {
+    background: linear-gradient(to bottom, rgba(102, 192, 244, 0.18), rgba(42, 71, 94, 0.2)) !important;
+    border-color: var(--tertiary) !important;
+    color: var(--tertiary) !important;
+  }
+  
+  .d-icon {
+    color: inherit !important;
+  }
+}
+
+// 透明按钮也需要可见
+.btn-transparent:not(.btn-primary) {
+  background: rgba(102, 192, 244, 0.05) !important;
+  border: 1px solid var(--primary-low) !important;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.12) !important;
+    border-color: var(--tertiary) !important;
+  }
+}
+
+// 图标按钮
+.btn.btn-icon:not(.btn-primary):not(.btn-danger) {
+  background: rgba(102, 192, 244, 0.06) !important;
+  border: 1px solid transparent !important;
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.15) !important;
+    border-color: var(--tertiary) !important;
+  }
+}
+
+// 排除主要按钮和危险按钮
+.btn.btn-primary {
+  background: linear-gradient(to bottom, #5c7e10, #4a6b0d) !important;
+  border: 1px solid #8bc53f !important;
+  color: #fff !important;
+  
+  &:hover {
+    background: linear-gradient(to bottom, #8bc53f, #5c7e10) !important;
+    border-color: #a4d007 !important;
+  }
+  
+  .d-icon {
+    color: #fff !important;
+  }
+}
+
+.btn.btn-danger {
+  background: linear-gradient(to bottom, #8b2222, #5c1515) !important;
+  border: 1px solid #cd3333 !important;
+  color: #fff !important;
+  
+  &:hover {
+    background: linear-gradient(to bottom, #aa2a2a, #8b2222) !important;
+    border-color: #ff4444 !important;
+  }
+  
+  .d-icon {
+    color: #fff !important;
+  }
+}

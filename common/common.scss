@@ -174,7 +174,7 @@ input:hover,
   border-radius: var(--d-input-border-radius);
 }
 
-/* Navigation */
+/* Navigation - Steam Style */
 
 html.mobile-view #navigation-bar.nav-pills>li button{
   border: none;
@@ -183,24 +183,26 @@ html.mobile-view #navigation-bar.nav-pills>li button{
 }
 
 .nav-pills {
-  box-shadow: 0 3px 0 var(--primary-50);
+  box-shadow: 0 2px 0 var(--primary-low);
   li {
     margin-bottom: 0;
     a,
     button {
-      transition: all 0.3s;
+      transition: all 0.2s ease-in-out;
       border-radius: 0;
+      color: var(--primary-medium);
       &::after {
         display: none;
       }
       &.active {
-        background-color: transparent;
-        box-shadow: 0 3px 0 var(--d-nav-color--active);
+        background: linear-gradient(to bottom, rgba(102, 192, 244, 0.15), transparent);
+        box-shadow: 0 2px 0 var(--tertiary);
+        color: var(--tertiary) !important;
       }
       &:not(.active):hover {
-        color: var(--primary);
-        background-color: transparent;
-        box-shadow: 0 3px 0 var(--d-nav-color--active);
+        color: var(--tertiary-high) !important;
+        background: linear-gradient(to bottom, rgba(102, 192, 244, 0.1), transparent);
+        box-shadow: 0 2px 0 var(--tertiary-medium);
       }
     }
   }
@@ -215,28 +217,32 @@ html.mobile-view #navigation-bar.nav-pills>li button{
 }
 
 .admin-controls .nav-pills > li a.active {
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.15), transparent);
+  color: var(--tertiary) !important;
 }
 .admin-controls .nav-pills > li > a:not(.active):hover,
 .admin-controls .nav-pills > li button:not(.active):hover {
-  color: var(--quaternary);
-  background-color: transparent;
+  color: var(--tertiary-high) !important;
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.08), transparent);
   box-shadow: none;
 }
 
 .new-user-wrapper .user-navigation .nav-pills li a {
-  transition: all 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-pills > li button {
-  border: 1px solid var(--btn-default-border);
+  border: 1px solid var(--primary-low);
   box-shadow: var(--btn-box-shadow);
   border-radius: var(--d-button-border-radius);
   margin-left: 10px;
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.1), transparent);
 }
 .admin-controls .nav-pills > li button:not(.active):hover,
 .nav-pills > li button:hover {
-  color: var(--tertiary-800);
+  color: var(--tertiary) !important;
+  border-color: var(--tertiary);
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.2), transparent);
 }
 
 .admin-controls .admin-actions {
@@ -752,21 +758,29 @@ div.edit-category .edit-category-nav .nav-stacked,
 .mobile-view #navigation-bar.nav-pills a.toggle-link {
   min-width: 100px;
   border: none;
-  box-shadow: 0 3px 0 var(--quaternary);
+  box-shadow: 0 2px 0 var(--tertiary);
   justify-content: center;
+  color: var(--tertiary);
 }
 .mobile-view .list-controls .nav-pills .drop {
   margin-top: 10px;
-  border: none;
+  border: 1px solid var(--primary-low);
   box-shadow: var(--menu-box-shadow);
   border-radius: var(--ant-radius);
   justify-content: center;
   animation: 0.3s panel-drop-down;
+  background: var(--secondary);
 }
 .list-controls .nav-pills .drop li a {
   padding-left: 10px;
   margin: 10px;
-  color: var(--primary);
+  color: var(--primary-high);
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    color: var(--tertiary) !important;
+    background: rgba(102, 192, 244, 0.1);
+  }
 }
 
 /*   uod   */
@@ -890,7 +904,13 @@ div.edit-category .edit-category-nav .nav-stacked,
 }
 
 .mobile-view .list-controls .nav-pills > li a:not(.active) {
-  box-shadow: 0 3px 0 var(--primary-low);
+  box-shadow: 0 2px 0 var(--primary-low);
+  color: var(--primary-medium);
+  
+  &:hover {
+    color: var(--tertiary) !important;
+    box-shadow: 0 2px 0 var(--tertiary-medium);
+  }
 }
 .mobile-view .list-controls #navigation-bar.nav-pills {
   flex-wrap: nowrap;
@@ -898,7 +918,6 @@ div.edit-category .edit-category-nav .nav-stacked,
   > li a {
     justify-content: center;
     min-width: max-content;
-    // width: 100%;
     border-radius: 0;
   }
 }

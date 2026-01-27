@@ -1296,10 +1296,11 @@ main .btn.btn-text,
   color: #fff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
   
   &:hover {
     background: linear-gradient(to bottom, #5a9cd8, #4a8cca) !important;
-    border-color: #6aace8 !important;
+    border: 1px solid #5a9cd8 !important;
     box-shadow: 0 2px 8px rgba(102, 192, 244, 0.3);
   }
   
@@ -2407,4 +2408,28 @@ tr.topic-list-item-separator {
   &:focus {
     background: rgba(102, 192, 244, 0.12) !important;
   }
+}
+
+
+/* 防止按钮悬停时尺寸变化 */
+.btn {
+  box-sizing: border-box !important;
+  transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out, color 0.15s ease-in-out !important;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    // 保持边框宽度一致
+    border-width: 1px !important;
+  }
+}
+
+// 确保所有按钮边框一致
+.btn-default,
+.btn-primary,
+.btn-danger,
+.btn-flat,
+.btn-text {
+  border-width: 1px !important;
+  border-style: solid !important;
 }

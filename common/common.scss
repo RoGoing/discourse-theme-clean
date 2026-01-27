@@ -2014,12 +2014,23 @@ aside.quote {
   }
 }
 
-// 代码块
-pre,
-code,
+// 代码块 - 只针对实际的代码元素
+pre code,
+.cooked pre,
+.cooked code:not(.hashtag-raw),
+.d-editor-preview code,
 .hljs {
   background: rgba(0, 0, 0, 0.3) !important;
   color: var(--primary-high) !important;
+}
+
+// 行内代码
+.cooked code:not(.hashtag-raw),
+p code,
+li code {
+  background: rgba(0, 0, 0, 0.25) !important;
+  padding: 2px 5px;
+  border-radius: 3px;
 }
 
 // 表格
@@ -2200,4 +2211,18 @@ details summary:hover {
   .btn:hover {
     background: rgba(102, 192, 244, 0.12) !important;
   }
+}
+
+
+/* 修复下拉框文字背景问题 */
+.select-kit-header .selected-name,
+.select-kit-header .name,
+.combo-box-header .selected-name,
+.category-chooser .selected-name,
+.tag-chooser .selected-name,
+.select-kit .select-kit-header span,
+.breadcrumb-item .name,
+.category-breadcrumb .name {
+  background: transparent !important;
+  background-color: transparent !important;
 }

@@ -1700,18 +1700,24 @@ blockquote {
 
 
 /* 侧边栏分类/区块头部选中状态修复 */
-.sidebar-section-header-wrapper:hover,
-.sidebar-section-header-wrapper.active,
-.sidebar-section-header-wrapper:focus,
-.sidebar-section-header:hover,
-.sidebar-section-header.active,
-.sidebar-section-header:focus,
-.sidebar-section-header-caret:hover,
-.sidebar-section-header-caret:focus,
-.btn.sidebar-section-header-button:hover,
-.btn.sidebar-section-header-button:focus,
-.btn.sidebar-section-header-button.active {
+.sidebar-section-header-wrapper,
+.sidebar-section-header,
+.btn.sidebar-section-header-button {
+  background: transparent !important;
+  border: none !important;
+  transition: all 0.15s ease-in-out;
+}
+
+// 只在最外层 wrapper 上应用悬停效果
+.sidebar-section-header-wrapper:hover {
   background: rgba(102, 192, 244, 0.12) !important;
+  
+  // 内部元素不要再加背景
+  .sidebar-section-header,
+  .btn.sidebar-section-header-button,
+  .sidebar-section-header-caret {
+    background: transparent !important;
+  }
   
   .sidebar-section-header-text,
   .d-icon {
@@ -1719,16 +1725,13 @@ blockquote {
   }
 }
 
-// 侧边栏区块头部默认状态
-.sidebar-section-header,
-.sidebar-section-header-wrapper,
-.btn.sidebar-section-header-button {
-  background: transparent !important;
-  border: none !important;
-  transition: all 0.15s ease-in-out;
+.sidebar-section-header-wrapper:active,
+.sidebar-section-header-wrapper:focus {
+  background: rgba(102, 192, 244, 0.15) !important;
   
-  &:active {
-    background: rgba(102, 192, 244, 0.15) !important;
+  .sidebar-section-header,
+  .btn.sidebar-section-header-button {
+    background: transparent !important;
   }
 }
 

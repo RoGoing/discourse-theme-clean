@@ -2283,3 +2283,64 @@ details summary:hover {
     }
   }
 }
+
+
+/* 用户菜单 focus/active 状态修复 */
+.user-menu .menu-links-row .btn:focus,
+.user-menu .menu-links-row .btn:active,
+.user-menu .menu-links-row .btn:focus-visible,
+.user-menu .quick-access-panel li:focus,
+.user-menu .quick-access-panel li:active,
+.user-menu .menu-link:focus,
+.user-menu .menu-link:active,
+.menu-panel .menu-link:focus,
+.menu-panel .menu-link:active,
+.user-menu.revamped .menu-links-row .btn:focus,
+.user-menu.revamped .menu-links-row .btn:active,
+.user-menu.revamped li:focus,
+.user-menu.revamped li:active,
+.menu-links-row .btn:focus,
+.menu-links-row .btn:active,
+.menu-links-row .btn:focus-visible,
+.user-menu li:focus,
+.user-menu li:active,
+.user-menu li:focus-within,
+.user-menu a:focus,
+.user-menu a:active,
+.user-menu button:focus,
+.user-menu button:active {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 全局 focus/active 状态覆盖 */
+*:focus,
+*:active,
+*:focus-visible,
+*:focus-within {
+  outline-color: var(--tertiary) !important;
+}
+
+/* 列表项 focus 状态 */
+li:focus,
+li:active,
+li:focus-visible,
+a:focus,
+a:active,
+button:focus,
+button:active {
+  background-color: rgba(102, 192, 244, 0.12) !important;
+}
+
+/* 排除不需要背景的元素 */
+.d-header *:focus,
+.d-header *:active,
+.d-header-icons *:focus,
+.d-header-icons *:active,
+input:focus,
+textarea:focus,
+.d-editor *:focus {
+  background-color: inherit !important;
+}

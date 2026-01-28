@@ -3101,3 +3101,64 @@ table th .btn {
     cursor: not-allowed !important;
   }
 }
+
+
+/* 安装主题选项 - Steam 风格 */
+.install-theme-item,
+.install-theme-item__popular,
+.install-theme-item__upload,
+.install-theme-item__create {
+  background: transparent !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  margin-bottom: 8px !important;
+  transition: all 0.15s ease-in-out !important;
+  
+  label {
+    color: var(--primary-high) !important;
+    cursor: pointer !important;
+  }
+  
+  .d-icon {
+    color: var(--primary-medium) !important;
+  }
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.08) !important;
+    border-color: var(--tertiary) !important;
+  }
+  
+  /* 选中状态 */
+  &:has(input:checked),
+  &.selected {
+    background: rgba(102, 192, 244, 0.15) !important;
+    border-color: var(--tertiary) !important;
+    
+    label {
+      color: var(--tertiary) !important;
+    }
+    
+    .d-icon {
+      color: var(--tertiary) !important;
+    }
+  }
+  
+  input[type="radio"] {
+    accent-color: var(--tertiary) !important;
+    
+    &:checked + label {
+      color: var(--tertiary) !important;
+    }
+  }
+}
+
+/* 单选按钮选中时的父元素 */
+.install-theme-item:has(input[type="radio"]:checked) {
+  background: rgba(102, 192, 244, 0.15) !important;
+  border-color: var(--tertiary) !important;
+  
+  label,
+  .d-icon {
+    color: var(--tertiary) !important;
+  }
+}

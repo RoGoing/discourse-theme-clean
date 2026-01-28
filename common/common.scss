@@ -2737,3 +2737,41 @@ li.--selected,
 li.dropdown-menu__item:hover {
   background: rgba(102, 192, 244, 0.08) !important;
 }
+
+
+/* 聊天编辑器工具栏按钮 - 无边框 */
+.chat-composer-dropdown__trigger-btn,
+.chat-composer-dropdown__menu-trigger,
+.chat-composer .btn.btn-flat,
+.chat-composer .btn.btn-icon,
+.chat-composer .btn.no-text,
+.fk-d-menu__trigger.btn-flat,
+.fk-d-menu__trigger.btn-icon,
+.btn.fk-d-menu__trigger,
+.chat-composer-button,
+.chat-composer__btn {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  
+  &:hover,
+  &:focus,
+  &.-expanded,
+  &[aria-expanded="true"] {
+    border: none !important;
+    background: rgba(102, 192, 244, 0.12) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* 通用：btn-flat 和 btn-icon 组合不需要边框 */
+.btn.btn-flat.btn-icon,
+.btn.no-text.btn-flat,
+.btn.no-text.btn-icon.btn-flat {
+  border: none !important;
+  
+  &:hover,
+  &:focus {
+    border: none !important;
+  }
+}

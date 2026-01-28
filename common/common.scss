@@ -2664,3 +2664,49 @@ input.selected,
   background: transparent !important;
   background-color: transparent !important;
 }
+
+
+/* 终极覆盖 - 使用 all 属性重置后重新设置 */
+.fk-d-menu__container li.selected,
+.fk-d-menu__container li.is-selected,
+.fk-d-menu__container .selected,
+.fk-d-menu__container .is-selected,
+.fk-d-menu li.selected,
+.fk-d-menu li.is-selected,
+.locale-menu li.selected,
+.locale-menu li.is-selected,
+.locale-menu .selected,
+.locale-menu .is-selected,
+[data-identifier="locale-menu"] li.selected,
+[data-identifier="locale-menu"] li.is-selected,
+[data-identifier="locale-menu"] .selected,
+.menu-panel li.selected,
+.menu-panel li.is-selected,
+.menu-panel .selected:not(.select-kit-header),
+.user-menu li.selected,
+.user-menu li.is-selected {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  background-image: none !important;
+}
+
+/* 覆盖可能的 CSS 变量 */
+:root {
+  --d-selected-background: rgba(102, 192, 244, 0.15);
+  --highlight-bg: rgba(102, 192, 244, 0.15);
+  --selected-bg: rgba(102, 192, 244, 0.15);
+}
+
+/* 针对 Ember/Glimmer 组件 */
+[data-menu] .selected,
+[data-menu] .is-selected,
+[data-dropdown] .selected,
+[data-dropdown] .is-selected,
+[role="listbox"] [aria-selected="true"],
+[role="menu"] [aria-selected="true"],
+[role="option"][aria-selected="true"],
+[role="menuitem"].selected,
+[role="menuitem"].is-selected {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}

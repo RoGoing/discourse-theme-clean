@@ -3009,3 +3009,52 @@ li.dropdown-menu__item:hover {
     }
   }
 }
+
+
+/* 管理报表表头排序按钮 - Steam 风格 */
+.admin-report-table-header .sort-btn,
+.admin-report-table-header .btn,
+th .sort-btn,
+th .btn.btn-primary.btn-transparent,
+th .btn.btn-transparent,
+.directory-table th .btn,
+table th .btn {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--primary-high) !important;
+  padding: 4px 8px !important;
+  
+  .d-icon {
+    color: var(--primary-medium) !important;
+  }
+  
+  .d-button-label {
+    color: var(--primary-high) !important;
+  }
+  
+  &:hover {
+    background: rgba(102, 192, 244, 0.12) !important;
+    
+    .d-icon,
+    .d-button-label {
+      color: var(--tertiary) !important;
+    }
+  }
+  
+  &.btn-primary {
+    background: transparent !important;
+    
+    .d-icon {
+      color: var(--tertiary) !important;
+    }
+  }
+}
+
+/* 表头背景 */
+.admin-report-table-header,
+.admin-report-table th,
+.directory-table th {
+  background: rgba(102, 192, 244, 0.08) !important;
+  border-bottom: 1px solid var(--primary-low) !important;
+}

@@ -2327,31 +2327,28 @@ details summary:hover {
 
 /* 全局 focus/active 状态覆盖 */
 *:focus,
-*:active,
-*:focus-visible,
-*:focus-within {
+*:focus-visible {
   outline-color: var(--tertiary) !important;
 }
 
-/* 列表项 focus 状态 */
-li:focus,
-li:active,
-li:focus-visible,
-a:focus,
-a:active,
-button:focus,
-button:active {
-  background-color: rgba(102, 192, 244, 0.12) !important;
-}
-
-/* 排除不需要背景的元素 */
+/* 排除不需要背景变化的元素 */
 .d-header *:focus,
 .d-header *:active,
 .d-header-icons *:focus,
 .d-header-icons *:active,
 input:focus,
 textarea:focus,
-.d-editor *:focus {
+.d-editor *:focus,
+.search-menu *:focus,
+.search-menu *:active,
+.menu-panel *:focus,
+.menu-panel *:active,
+.search-link:focus,
+.search-link:active,
+.search-menu-assistant-item:focus,
+.search-menu-assistant-item:active,
+a:active,
+button:active {
   background-color: inherit !important;
 }
 

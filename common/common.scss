@@ -2710,3 +2710,29 @@ input.selected,
   background: rgba(102, 192, 244, 0.15) !important;
   background-color: rgba(102, 192, 244, 0.15) !important;
 }
+
+
+/* 语言选择器选中状态 - 精确修复 */
+.dropdown-menu__item.--selected,
+.dropdown-menu__item.\--selected,
+li.dropdown-menu__item.--selected,
+li.--selected,
+.locale-options.--selected,
+[class*="--selected"] {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  
+  .btn,
+  button,
+  .d-button-label,
+  span {
+    color: var(--primary-high) !important;
+    background: transparent !important;
+  }
+}
+
+/* 下拉菜单项悬停 */
+.dropdown-menu__item:hover,
+li.dropdown-menu__item:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+}

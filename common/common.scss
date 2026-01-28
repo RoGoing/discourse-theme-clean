@@ -3200,27 +3200,36 @@ input[type="file"] + br + .description,
 }
 
 
-/* 搜索菜单点击状态修复 */
-.search-menu-panel,
-.search-menu-panel .panel-body,
-.search-menu-panel .panel-body-contents,
-.search-menu-container,
-.search-menu-initial-options,
-.search-menu-recent,
-.search-menu-assistant-item,
-.search-link {
+/* 弹出面板/对话框点击状态修复 - 防止变黑 */
+.menu-panel,
+.drop-down,
+.modal,
+.d-modal,
+.dialog-content,
+.fk-d-menu,
+.popup-menu,
+.search-menu,
+.user-menu,
+.select-kit-body,
+.panel-body,
+.panel-body-contents {
   &:active {
-    background: transparent !important;
-    background-color: transparent !important;
+    background-color: inherit !important;
   }
 }
 
+/* 弹出面板内的可点击项 */
+.menu-panel li:active,
+.menu-panel a:active,
+.menu-panel button:active,
+.drop-down li:active,
+.drop-down a:active,
 .search-menu-assistant-item:active,
-.search-menu-assistant-item a:active,
 .search-link:active,
-li.search-menu-assistant-item:active {
-  background: rgba(102, 192, 244, 0.12) !important;
-  background-color: rgba(102, 192, 244, 0.12) !important;
+.user-menu li:active,
+.select-kit-row:active {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
 }
 
 /* 搜索菜单悬停 */
@@ -3228,3 +3237,4 @@ li.search-menu-assistant-item:active {
 .search-link:hover {
   background: rgba(102, 192, 244, 0.08) !important;
 }
+

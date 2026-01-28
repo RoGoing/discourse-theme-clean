@@ -2914,3 +2914,98 @@ li.dropdown-menu__item:hover {
     }
   }
 }
+
+
+/* 日期/期间选择器 - Steam 风格优化 */
+.period-chooser-header,
+.select-kit-header.period-chooser-header {
+  display: flex !important;
+  align-items: center !important;
+  padding: 8px 12px !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.08), rgba(42, 71, 94, 0.1)) !important;
+  
+  .selected-name {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: transparent !important;
+    
+    h2 {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin: 0 !important;
+      font-size: 1em !important;
+      font-weight: normal !important;
+    }
+  }
+  
+  .date-section {
+    color: var(--tertiary) !important;
+    font-weight: 600 !important;
+  }
+  
+  .top-date-string {
+    color: var(--primary-high) !important;
+    font-size: 0.9em !important;
+  }
+  
+  .caret-icon {
+    color: var(--primary-medium) !important;
+    margin-left: 8px !important;
+  }
+  
+  &:hover {
+    border-color: var(--tertiary) !important;
+    background: linear-gradient(to bottom, rgba(102, 192, 244, 0.12), rgba(42, 71, 94, 0.15)) !important;
+  }
+}
+
+/* 日期选择器下拉面板 */
+.period-chooser .select-kit-body,
+.select-kit.period-chooser .select-kit-body {
+  background: var(--secondary) !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  
+  .select-kit-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    
+    .date-section {
+      color: var(--tertiary) !important;
+      font-weight: 600 !important;
+      min-width: 40px !important;
+    }
+    
+    .top-date-string {
+      color: var(--primary-medium) !important;
+      font-size: 0.9em !important;
+    }
+    
+    &:hover {
+      background: rgba(102, 192, 244, 0.08) !important;
+      
+      .top-date-string {
+        color: var(--primary-high) !important;
+      }
+    }
+    
+    &.is-selected,
+    &.is-highlighted {
+      background: rgba(102, 192, 244, 0.15) !important;
+      
+      .date-section {
+        color: var(--tertiary) !important;
+      }
+      
+      .top-date-string {
+        color: var(--primary-high) !important;
+      }
+    }
+  }
+}

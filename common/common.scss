@@ -3170,3 +3170,21 @@ html .install-theme-item:has(input:checked) {
     background: #1b2838 !important;
   }
 }
+
+
+/* 搜索菜单面板点击背景修复 - 仅针对此组件 */
+.search-menu-panel.menu-panel.drop-down {
+  &:active {
+    background: #1b2838 !important;
+  }
+  
+  .panel-body:active,
+  .panel-body-contents:active,
+  .search-menu-container:active,
+  .search-input-wrapper:active,
+  .results:active,
+  .search-menu-initial-options:active,
+  .search-menu-recent:active {
+    background: #1b2838 !important;
+  }
+}

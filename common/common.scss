@@ -3238,3 +3238,45 @@ input[type="file"] + br + .description,
   background: rgba(102, 192, 244, 0.08) !important;
 }
 
+
+
+/* 修复弹出面板点击变黑问题 */
+.user-menu.revamped,
+.user-menu.revamped.menu-panel,
+.user-menu.revamped .panel-body,
+.user-menu.revamped .panel-body-contents,
+.user-menu.revamped .quick-access-panel,
+.user-menu.revamped .menu-tabs-container,
+.user-menu.revamped .tabs-list,
+.menu-panel.drop-down,
+.menu-panel .panel-body,
+.menu-panel .panel-body-contents,
+.search-menu-panel,
+.search-menu-panel .panel-body,
+.search-menu-panel .panel-body-contents,
+div.menu-panel,
+div.drop-down,
+div.panel-body,
+div.panel-body-contents {
+  &:active,
+  &:focus {
+    background: var(--secondary) !important;
+    background-color: var(--secondary) !important;
+  }
+}
+
+/* 确保面板背景始终正确 */
+.user-menu.revamped {
+  background: var(--secondary) !important;
+  
+  .panel-body,
+  .panel-body-contents,
+  .quick-access-panel,
+  .menu-tabs-container {
+    background: var(--secondary) !important;
+    
+    &:active {
+      background: var(--secondary) !important;
+    }
+  }
+}

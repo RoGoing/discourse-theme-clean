@@ -3188,3 +3188,31 @@ html .install-theme-item:has(input:checked) {
     background: #1b2838 !important;
   }
 }
+
+
+/* btn-icon-text 按钮美化 */
+.btn.btn-icon-text:not(.btn-primary):not(.btn-danger):not(.sort-btn) {
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.08), rgba(42, 71, 94, 0.1));
+  border: 1px solid var(--primary-low);
+  border-radius: 3px;
+  color: var(--primary-high);
+  transition: all 0.15s ease-in-out;
+  
+  .d-icon {
+    color: var(--primary-medium);
+  }
+  
+  &:hover {
+    background: linear-gradient(to bottom, rgba(102, 192, 244, 0.15), rgba(42, 71, 94, 0.18));
+    border-color: var(--tertiary);
+    
+    .d-icon,
+    .d-button-label {
+      color: var(--tertiary);
+    }
+  }
+  
+  &:active {
+    background: rgba(102, 192, 244, 0.2);
+  }
+}

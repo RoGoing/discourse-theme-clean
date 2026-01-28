@@ -2651,16 +2651,17 @@ button.selected,
 }
 
 /* 使用属性选择器覆盖任何带 selected 类的元素 */
-[class*="selected"]:not(.btn):not(input):not(textarea) {
-  background: rgba(102, 192, 244, 0.15) !important;
-  background-color: rgba(102, 192, 244, 0.15) !important;
-}
+/* 已移除 - 会影响其他元素 */
 
 /* 排除不需要的元素 */
 .selected-name,
+.select-kit-header .selected-name,
 .select-kit-header.selected,
 input.selected,
-.btn.selected {
+.btn.selected,
+.combo-box-header .selected-name,
+.select-kit .selected-name,
+.select-kit-header span {
   background: transparent !important;
   background-color: transparent !important;
 }

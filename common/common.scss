@@ -2577,3 +2577,41 @@ tr.topic-list-item-separator {
     }
   }
 }
+
+
+/* 语言选择器和所有下拉菜单选中状态 */
+.locale-menu .select-kit-row.is-selected,
+.locale-menu .select-kit-row.is-highlighted,
+.menu-panel .select-kit-row.is-selected,
+.menu-panel .select-kit-row.is-highlighted,
+.d-header .select-kit-row.is-selected,
+.d-header .select-kit-row.is-highlighted,
+.fk-d-menu .select-kit-row.is-selected,
+.fk-d-menu .select-kit-row.is-highlighted,
+.dropdown-menu .is-selected,
+.dropdown-menu .is-highlighted,
+.dropdown-menu li.selected,
+.dropdown-menu li:focus {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+  
+  &,
+  span,
+  * {
+    color: var(--primary-high) !important;
+  }
+}
+
+/* 更强的全局下拉选中覆盖 */
+[class*="select-kit"] .is-selected,
+[class*="select-kit"] .is-highlighted,
+[class*="dropdown"] .is-selected,
+[class*="dropdown"] .is-highlighted,
+[class*="menu"] .is-selected,
+[class*="menu"] .is-highlighted,
+.fk-d-menu__inner-content .is-selected,
+.fk-d-menu__inner-content li:focus,
+.fk-d-menu__inner-content li.selected {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}

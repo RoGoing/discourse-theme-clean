@@ -3154,3 +3154,19 @@ html .install-theme-item:has(input:checked) {
   background-color: rgba(102, 192, 244, 0.15) !important;
   border-color: var(--tertiary) !important;
 }
+
+
+/* 用户菜单面板点击背景修复 - 仅针对此组件 */
+.user-menu.revamped.menu-panel.drop-down {
+  &:active {
+    background: #1b2838 !important;
+  }
+  
+  .panel-body:active,
+  .panel-body-contents:active,
+  .menu-tabs-container:active,
+  .tabs-list:active,
+  .quick-access-panel:active {
+    background: #1b2838 !important;
+  }
+}

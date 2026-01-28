@@ -2327,15 +2327,20 @@ details summary:hover {
 
 /* 全局 focus/active 状态覆盖 */
 *:focus,
-*:focus-visible {
+*:active,
+*:focus-visible,
+*:focus-within {
   outline-color: var(--tertiary) !important;
 }
 
 /* 列表项 focus 状态 */
 li:focus,
+li:active,
 li:focus-visible,
 a:focus,
-button:focus {
+a:active,
+button:focus,
+button:active {
   background-color: rgba(102, 192, 244, 0.12) !important;
 }
 
@@ -3149,105 +3154,3 @@ html .install-theme-item:has(input:checked) {
   background-color: rgba(102, 192, 244, 0.15) !important;
   border-color: var(--tertiary) !important;
 }
-
-
-/* 文件输入框 - 防止布局偏移 */
-input[type="file"] {
-  border: 1px solid var(--primary-low) !important;
-  border-radius: 3px !important;
-  padding: 8px !important;
-  background: var(--secondary) !important;
-  color: var(--primary-high) !important;
-  box-sizing: border-box !important;
-  transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
-  
-  &:hover {
-    border: 1px solid var(--tertiary) !important;
-    background: rgba(102, 192, 244, 0.05) !important;
-  }
-  
-  &:focus {
-    border: 1px solid var(--tertiary) !important;
-    outline: none !important;
-    box-shadow: 0 0 6px rgba(102, 192, 244, 0.2) !important;
-  }
-  
-  &::file-selector-button {
-    background: linear-gradient(to bottom, rgba(102, 192, 244, 0.15), rgba(42, 71, 94, 0.2)) !important;
-    border: 1px solid var(--primary-low) !important;
-    border-radius: 3px !important;
-    color: var(--primary-high) !important;
-    padding: 6px 12px !important;
-    margin-right: 10px !important;
-    cursor: pointer !important;
-    transition: all 0.15s ease-in-out !important;
-    
-    &:hover {
-      background: linear-gradient(to bottom, rgba(102, 192, 244, 0.25), rgba(42, 71, 94, 0.3)) !important;
-      border-color: var(--tertiary) !important;
-      color: var(--tertiary) !important;
-    }
-  }
-}
-
-/* 文件输入描述文字 */
-.inputs .description,
-input[type="file"] + br + .description,
-.description {
-  color: var(--primary-medium) !important;
-  font-size: 0.9em !important;
-  margin-top: 6px !important;
-}
-
-
-/* 弹出面板/对话框点击状态修复 - 防止变黑 */
-.menu-panel,
-.drop-down,
-.modal,
-.d-modal,
-.dialog-content,
-.fk-d-menu,
-.popup-menu,
-.search-menu,
-.user-menu,
-.select-kit-body,
-.panel-body,
-.panel-body-contents {
-  &:active {
-    background-color: inherit !important;
-  }
-}
-
-/* 弹出面板内的可点击项 */
-.menu-panel li:active,
-.menu-panel a:active,
-.menu-panel button:active,
-.drop-down li:active,
-.drop-down a:active,
-.search-menu-assistant-item:active,
-.search-link:active,
-.user-menu li:active,
-.select-kit-row:active {
-  background: rgba(102, 192, 244, 0.15) !important;
-  background-color: rgba(102, 192, 244, 0.15) !important;
-}
-
-/* 搜索菜单悬停 */
-.search-menu-assistant-item:hover,
-.search-link:hover {
-  background: rgba(102, 192, 244, 0.08) !important;
-}
-
-
-
-/* 弹出面板背景 */
-.user-menu.revamped,
-.menu-panel,
-.select-kit-body,
-.fk-d-menu,
-.fk-d-menu__inner-content,
-.dropdown-menu,
-.search-menu-panel {
-  background: #1b2838 !important;
-}
-

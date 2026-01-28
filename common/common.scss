@@ -2615,3 +2615,52 @@ tr.topic-list-item-separator {
   background: rgba(102, 192, 244, 0.15) !important;
   background-color: rgba(102, 192, 244, 0.15) !important;
 }
+
+
+/* 强制覆盖所有下拉/菜单选中状态 - 最高优先级 */
+li.is-selected,
+li.selected,
+li[aria-selected="true"],
+li[aria-current="true"],
+li.is-highlighted,
+div.is-selected,
+div.selected,
+a.is-selected,
+a.selected,
+button.is-selected,
+button.selected,
+.select-kit-row.is-selected,
+.select-kit-row.selected,
+.select-kit-row[aria-selected="true"],
+.select-kit-row[aria-current="true"] {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}
+
+/* 针对 fk-d-menu 组件 */
+.fk-d-menu li.is-selected,
+.fk-d-menu li.selected,
+.fk-d-menu__item.is-selected,
+.fk-d-menu__item.selected,
+.fk-d-menu [aria-selected="true"],
+.fk-d-menu [aria-current="true"],
+[data-content][class*="menu"] li.is-selected,
+[data-content][class*="menu"] li.selected {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}
+
+/* 使用属性选择器覆盖任何带 selected 类的元素 */
+[class*="selected"]:not(.btn):not(input):not(textarea) {
+  background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
+}
+
+/* 排除不需要的元素 */
+.selected-name,
+.select-kit-header.selected,
+input.selected,
+.btn.selected {
+  background: transparent !important;
+  background-color: transparent !important;
+}

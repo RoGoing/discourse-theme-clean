@@ -3251,3 +3251,37 @@ li.admin-site-settings-category-nav__item a:hover {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+
+/* 表单上传按钮和帮助文字 - Steam 风格 */
+label.btn.btn-default.btn-small,
+.form-kit .btn.btn-default.btn-small,
+.pick-files-button + label.btn,
+label.btn[for*="__input"] {
+  background: linear-gradient(to bottom, rgba(102, 192, 244, 0.1), rgba(42, 71, 94, 0.12)) !important;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 3px !important;
+  color: var(--primary-high) !important;
+  
+  .d-icon {
+    color: var(--primary-medium) !important;
+  }
+  
+  &:hover {
+    background: linear-gradient(to bottom, rgba(102, 192, 244, 0.18), rgba(42, 71, 94, 0.2)) !important;
+    border-color: var(--tertiary) !important;
+    color: var(--tertiary) !important;
+    
+    .d-icon {
+      color: var(--tertiary) !important;
+    }
+  }
+}
+
+/* 表单帮助文字 */
+.form-kit-text,
+.form-kit__container-help-text,
+.form-kit-text.form-kit__container-help-text,
+p.form-kit-text {
+  color: var(--primary-medium) !important;
+}

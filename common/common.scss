@@ -777,13 +777,13 @@ div.edit-category .edit-category-nav .nav-stacked,
 }
 .nav-stacked li a.active,
 .user-secondary-navigation .nav-stacked li a.active {
-  background: var(--tertiary-100);
+  background: rgba(102, 192, 244, 0.15);
   border-radius: var(--ant-radius);
   color: var(--tertiary);
 }
 .nav-stacked li a:not(.active):hover,
 .user-secondary-navigation .nav-stacked li a:not(.active):hover {
-  background: var(--primary-low);
+  background: rgba(102, 192, 244, 0.08);
   border-radius: var(--ant-radius);
 }
 
@@ -3219,7 +3219,12 @@ html .install-theme-item:has(input:checked) {
 
 
 /* 管理设置分类导航 - Steam 风格 */
-.admin-site-settings-category-nav .nav-stacked li a {
+.admin-nav.admin-site-settings-category-nav .nav-stacked li a,
+.admin-site-settings-category-nav .nav-stacked li a,
+.admin-site-settings-category-nav ul.nav-stacked li a {
+  background: transparent !important;
+  transition: all 0.15s ease-in-out !important;
+  
   &.active {
     background: rgba(102, 192, 244, 0.15) !important;
     color: var(--tertiary) !important;
@@ -3227,6 +3232,14 @@ html .install-theme-item:has(input:checked) {
   
   &:not(.active):hover {
     background: rgba(102, 192, 244, 0.08) !important;
-    color: var(--primary-very-high) !important;
+    color: var(--tertiary) !important;
   }
+}
+
+/* 覆盖 nav-stacked 通用悬停样式 */
+.admin-site-settings-category-nav.admin-nav .nav-stacked li a:not(.active):hover,
+.admin-nav .nav-stacked li a:not(.active):hover,
+div.admin-site-settings-category-nav .nav-stacked li a:not(.active):hover {
+  background: rgba(102, 192, 244, 0.08) !important;
+  background-color: rgba(102, 192, 244, 0.08) !important;
 }

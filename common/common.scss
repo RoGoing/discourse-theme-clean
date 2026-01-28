@@ -2331,24 +2331,22 @@ details summary:hover {
   outline-color: var(--tertiary) !important;
 }
 
-/* 排除不需要背景变化的元素 */
+/* 列表项 focus 状态 */
+li:focus,
+li:focus-visible,
+a:focus,
+button:focus {
+  background-color: rgba(102, 192, 244, 0.12) !important;
+}
+
+/* 排除不需要背景的元素 */
 .d-header *:focus,
 .d-header *:active,
 .d-header-icons *:focus,
 .d-header-icons *:active,
 input:focus,
 textarea:focus,
-.d-editor *:focus,
-.search-menu *:focus,
-.search-menu *:active,
-.menu-panel *:focus,
-.menu-panel *:active,
-.search-link:focus,
-.search-link:active,
-.search-menu-assistant-item:focus,
-.search-menu-assistant-item:active,
-a:active,
-button:active {
+.d-editor *:focus {
   background-color: inherit !important;
 }
 
@@ -3199,4 +3197,34 @@ input[type="file"] + br + .description,
   color: var(--primary-medium) !important;
   font-size: 0.9em !important;
   margin-top: 6px !important;
+}
+
+
+/* 搜索菜单点击状态修复 */
+.search-menu-panel,
+.search-menu-panel .panel-body,
+.search-menu-panel .panel-body-contents,
+.search-menu-container,
+.search-menu-initial-options,
+.search-menu-recent,
+.search-menu-assistant-item,
+.search-link {
+  &:active {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
+.search-menu-assistant-item:active,
+.search-menu-assistant-item a:active,
+.search-link:active,
+li.search-menu-assistant-item:active {
+  background: rgba(102, 192, 244, 0.12) !important;
+  background-color: rgba(102, 192, 244, 0.12) !important;
+}
+
+/* 搜索菜单悬停 */
+.search-menu-assistant-item:hover,
+.search-link:hover {
+  background: rgba(102, 192, 244, 0.08) !important;
 }

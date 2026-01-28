@@ -3107,8 +3107,10 @@ table th .btn {
 .install-theme-item,
 .install-theme-item__popular,
 .install-theme-item__upload,
-.install-theme-item__create {
-  background: transparent !important;
+.install-theme-item__create,
+div[class*="install-theme-item"] {
+  background: var(--secondary) !important;
+  background-color: var(--secondary) !important;
   border: 1px solid var(--primary-low) !important;
   border-radius: 3px !important;
   margin-bottom: 8px !important;
@@ -3125,40 +3127,30 @@ table th .btn {
   
   &:hover {
     background: rgba(102, 192, 244, 0.08) !important;
+    background-color: rgba(102, 192, 244, 0.08) !important;
     border-color: var(--tertiary) !important;
-  }
-  
-  /* 选中状态 */
-  &:has(input:checked),
-  &.selected {
-    background: rgba(102, 192, 244, 0.15) !important;
-    border-color: var(--tertiary) !important;
-    
-    label {
-      color: var(--tertiary) !important;
-    }
-    
-    .d-icon {
-      color: var(--tertiary) !important;
-    }
-  }
-  
-  input[type="radio"] {
-    accent-color: var(--tertiary) !important;
-    
-    &:checked + label {
-      color: var(--tertiary) !important;
-    }
   }
 }
 
-/* 单选按钮选中时的父元素 */
-.install-theme-item:has(input[type="radio"]:checked) {
+/* 选中状态 - 使用更强的选择器 */
+.install-theme-item.selected,
+.install-theme-item--selected,
+.install-theme-item input[type="radio"]:checked ~ label,
+div[class*="install-theme-item"] input[type="radio"]:checked ~ label {
+  color: var(--tertiary) !important;
+}
+
+/* 强制覆盖选中项的背景 */
+.install-theme-item input[type="radio"]:checked,
+.install-theme-item input[type="radio"]:checked + label,
+.install-theme-item input[type="radio"]:checked ~ * {
+  background: transparent !important;
+}
+
+/* 父元素选中状态背景 */
+body .install-theme-item:has(input:checked),
+html .install-theme-item:has(input:checked) {
   background: rgba(102, 192, 244, 0.15) !important;
+  background-color: rgba(102, 192, 244, 0.15) !important;
   border-color: var(--tertiary) !important;
-  
-  label,
-  .d-icon {
-    color: var(--tertiary) !important;
-  }
 }

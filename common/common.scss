@@ -3240,121 +3240,14 @@ input[type="file"] + br + .description,
 
 
 
-/* 修复弹出面板点击变黑/透明问题 */
+/* 弹出面板背景 */
 .user-menu.revamped,
-.user-menu.revamped.menu-panel,
-.user-menu.revamped .panel-body,
-.user-menu.revamped .panel-body-contents,
-.user-menu.revamped .quick-access-panel,
-.user-menu.revamped .menu-tabs-container,
-.user-menu.revamped .tabs-list,
-.menu-panel.drop-down,
-.menu-panel .panel-body,
-.menu-panel .panel-body-contents,
-.search-menu-panel,
-.search-menu-panel .panel-body,
-.search-menu-panel .panel-body-contents,
+.menu-panel,
 .select-kit-body,
-.select-kit .select-kit-body,
-.select-kit-collection,
-.dropdown-select-box .select-kit-body,
 .fk-d-menu,
 .fk-d-menu__inner-content,
 .dropdown-menu,
-div.menu-panel,
-div.drop-down,
-div.panel-body,
-div.panel-body-contents {
+.search-menu-panel {
   background: #1b2838 !important;
-  background-color: #1b2838 !important;
-  
-  &:active,
-  &:focus {
-    background: #1b2838 !important;
-    background-color: #1b2838 !important;
-  }
 }
 
-/* 确保面板背景始终正确 */
-.user-menu.revamped {
-  background: #1b2838 !important;
-  
-  .panel-body,
-  .panel-body-contents,
-  .quick-access-panel,
-  .menu-tabs-container {
-    background: #1b2838 !important;
-    
-    &:active {
-      background: #1b2838 !important;
-    }
-  }
-}
-
-
-/* 全局修复所有弹出窗口点击透明问题 */
-[class*="menu"],
-[class*="panel"],
-[class*="dropdown"],
-[class*="drop-down"],
-[class*="modal"],
-[class*="dialog"],
-[class*="popup"],
-[class*="popover"],
-[class*="tooltip"],
-[class*="select-kit-body"],
-[class*="select-kit-collection"],
-[data-content],
-[data-menu],
-[data-dropdown],
-.tippy-box,
-.tippy-content,
-.fk-d-menu,
-.fk-d-menu__content,
-.fk-d-menu__inner-content,
-.fk-d-tooltip,
-.d-modal,
-.d-modal__container,
-.d-modal__body,
-.bootbox,
-.chat-drawer,
-.emoji-picker {
-  &:active {
-    background-color: #1b2838 !important;
-  }
-}
-
-/* 更强的覆盖 - 防止任何元素点击时变透明 */
-*:active {
-  background-color: inherit;
-}
-
-/* 恢复需要点击反馈的元素 */
-a:active,
-button:active,
-.btn:active,
-li:active,
-[role="button"]:active,
-[role="menuitem"]:active,
-[role="option"]:active,
-.select-kit-row:active,
-.search-link:active,
-.menu-link:active {
-  background-color: rgba(102, 192, 244, 0.15) !important;
-}
-
-/* 确保容器元素不变透明 */
-div:active,
-section:active,
-article:active,
-main:active,
-aside:active,
-nav:active,
-header:active,
-footer:active,
-ul:active,
-ol:active,
-form:active,
-fieldset:active {
-  background-color: inherit !important;
-}

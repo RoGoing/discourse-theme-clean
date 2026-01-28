@@ -3234,9 +3234,16 @@ html .install-theme-item:has(input:checked) {
 
 
 /* 管理设置分类导航悬停 - 最高优先级覆盖 */
-div.admin-nav.admin-site-settings-category-nav ul.nav-stacked li a:hover,
-.admin-site-settings-category-nav .nav-stacked li a:hover,
-.admin-site-settings-category-nav li a:hover {
+.admin-site-settings-category-nav li.admin-site-settings-category-nav__item:hover,
+.admin-site-settings-category-nav__item:hover,
+li.admin-site-settings-category-nav__item:hover {
   background: rgba(102, 192, 244, 0.08) !important;
   background-color: rgba(102, 192, 244, 0.08) !important;
+}
+
+.admin-site-settings-category-nav li.admin-site-settings-category-nav__item a:hover,
+.admin-site-settings-category-nav__item a:hover,
+li.admin-site-settings-category-nav__item a:hover {
+  background: transparent !important;
+  background-color: transparent !important;
 }

@@ -3058,3 +3058,46 @@ table th .btn {
   background: rgba(102, 192, 244, 0.08) !important;
   border-bottom: 1px solid var(--primary-low) !important;
 }
+
+
+/* 主题卡片删除按钮 - 防止布局偏移 */
+.theme-card__button,
+.theme-card__button.--danger,
+.btn.--danger,
+.btn.btn-transparent.--danger,
+.btn.theme-card__button {
+  border: 1px solid transparent !important;
+  box-sizing: border-box !important;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out !important;
+  
+  &:hover,
+  &:focus {
+    border: 1px solid transparent !important;
+  }
+}
+
+/* 危险/删除按钮样式 */
+.btn.--danger,
+.btn.btn-transparent.--danger,
+.theme-card__button.--danger {
+  background: rgba(205, 51, 51, 0.1) !important;
+  
+  .d-icon,
+  .d-button-label {
+    color: #cd3333 !important;
+  }
+  
+  &:hover:not([disabled]) {
+    background: rgba(205, 51, 51, 0.2) !important;
+    
+    .d-icon,
+    .d-button-label {
+      color: #ff4444 !important;
+    }
+  }
+  
+  &[disabled] {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+  }
+}

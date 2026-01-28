@@ -3216,3 +3216,17 @@ html .install-theme-item:has(input:checked) {
     background: rgba(102, 192, 244, 0.2);
   }
 }
+
+
+/* 管理设置分类导航 - Steam 风格 */
+.admin-site-settings-category-nav .nav-stacked li a {
+  &.active {
+    background: rgba(102, 192, 244, 0.15) !important;
+    color: var(--tertiary) !important;
+  }
+  
+  &:not(.active):hover {
+    background: rgba(102, 192, 244, 0.08) !important;
+    color: var(--primary-very-high) !important;
+  }
+}

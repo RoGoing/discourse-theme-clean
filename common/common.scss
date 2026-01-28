@@ -3240,7 +3240,7 @@ input[type="file"] + br + .description,
 
 
 
-/* 修复弹出面板点击变黑问题 */
+/* 修复弹出面板点击变黑/透明问题 */
 .user-menu.revamped,
 .user-menu.revamped.menu-panel,
 .user-menu.revamped .panel-body,
@@ -3254,29 +3254,39 @@ input[type="file"] + br + .description,
 .search-menu-panel,
 .search-menu-panel .panel-body,
 .search-menu-panel .panel-body-contents,
+.select-kit-body,
+.select-kit .select-kit-body,
+.select-kit-collection,
+.dropdown-select-box .select-kit-body,
+.fk-d-menu,
+.fk-d-menu__inner-content,
+.dropdown-menu,
 div.menu-panel,
 div.drop-down,
 div.panel-body,
 div.panel-body-contents {
+  background: #1b2838 !important;
+  background-color: #1b2838 !important;
+  
   &:active,
   &:focus {
-    background: var(--secondary) !important;
-    background-color: var(--secondary) !important;
+    background: #1b2838 !important;
+    background-color: #1b2838 !important;
   }
 }
 
 /* 确保面板背景始终正确 */
 .user-menu.revamped {
-  background: var(--secondary) !important;
+  background: #1b2838 !important;
   
   .panel-body,
   .panel-body-contents,
   .quick-access-panel,
   .menu-tabs-container {
-    background: var(--secondary) !important;
+    background: #1b2838 !important;
     
     &:active {
-      background: var(--secondary) !important;
+      background: #1b2838 !important;
     }
   }
 }
